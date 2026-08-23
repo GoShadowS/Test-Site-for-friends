@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DemoVerse — сайт, где есть всё</title>
+  <meta name="description" content="Многостраничная песочница: игры, квизы, инструменты, галерея, блог, формы, медиа и достижения — всё на чистом HTML, CSS и JavaScript.">
+  <meta property="og:title" content="DemoVerse — сайт, где есть всё">
+  <meta property="og:description" content="16 страниц демо: игры, инструменты, галерея, блог, квиз и достижения. Без фреймворков!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="img/hero.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icon-512.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="preloader"><div class="loader-orbit"></div></div>
+  <div id="scrollProgress"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" id="brandLogo">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M10 8h6a8 8 0 0 1 0 16h-6V8zm4 3.6v8.8h2a4.4 4.4 0 0 0 0-8.8h-2z" fill="#fff"/></svg>
+        DemoVerse <span class="badge badge-primary">тест</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">🏠 Главная</a>
+        <div class="dropdown">
+          <button class="dropbtn">🎮 Интерактив ▾</button>
+          <div class="dropdown-menu">
+            <a href="games.html">🎮 Игры</a>
+            <a href="quiz.html">❓ Квиз</a>
+            <a href="media.html">🎨 Медиа и звук</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">🧰 Инструменты ▾</button>
+          <div class="dropdown-menu">
+            <a href="apps.html">🧰 Приложения</a>
+            <a href="forms.html">📝 Формы</a>
+            <a href="tables.html">📊 Таблицы</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">📚 Контент ▾</button>
+          <div class="dropdown-menu">
+            <a href="gallery.html">🖼️ Галерея</a>
+            <a href="blog.html">📰 Блог</a>
+            <a href="components.html">🧩 UI-кит</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">ℹ️ Инфо ▾</button>
+          <div class="dropdown-menu">
+            <a href="about.html">👀 О сайте</a>
+            <a href="faq.html">❔ FAQ</a>
+            <a href="contact.html">✉️ Контакты</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" title="Переключить тему (темная/светлая)">🌙</button>
+        <button class="icon-btn burger" id="burger" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero center">
+      <canvas id="particles"></canvas>
+      <div class="container">
+        <div class="badge badge-info mb-16 anim-pulse">🚀 16 страниц · 5 игр · 15 достижений · 0 зависимостей</div>
+        <h1>Добро пожаловать в <span class="grad-text">DemoVerse</span></h1>
+        <p class="sub"><span id="typeText"></span><span class="type-cursor"></span></p>
+        <div class="cta">
+          <a href="#features" class="btn btn-primary btn-lg">✨ Смотреть возможности</a>
+          <a href="games.html" class="btn btn-secondary btn-lg">🎮 Играть</a>
+          <a href="quiz.html" class="btn btn-ghost btn-lg">❓ Пройти квиз</a>
+        </div>
+        <div class="grid grid-4 mt-34">
+          <div class="stat-box"><div class="num" data-to="16">0</div><div class="lbl">страниц сайта</div></div>
+          <div class="stat-box"><div class="num" data-to="40">0</div><div class="lbl">интерактивных демо</div></div>
+          <div class="stat-box"><div class="num" data-to="5">0</div><div class="lbl">игр</div></div>
+          <div class="stat-box"><div class="num" data-to="0">0</div><div class="lbl">внешних библиотек</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ТИКЕР -->
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <span>🔥 <b>Новинка:</b>&nbsp;система достижений — соберите все 15!</span>
+        <span>🐍 Играйте в Змейку прямо на странице <b>«Игры»</b></span>
+        <span>🌗 Переключайте светлую и тёмную тему — настройка сохраняется</span>
+        <span>🎹 На странице «Медиа» есть настоящее пианино на Web Audio API</span>
+        <span>🕹️ Введите код Konami где угодно... если знаете его 😉</span>
+        <span>📄 Сайт работает офлайн благодаря Service Worker</span>
+        <span>🔥 <b>Новинка:</b>&nbsp;система достижений — соберите все 15!</span>
+        <span>🐍 Играйте в Змейку прямо на странице <b>«Игры»</b></span>
+        <span>🌗 Переключайте светлую и тёмную тему — настройка сохраняется</span>
+        <span>🎹 На странице «Медиа» есть настоящее пианино на Web Audio API</span>
+        <span>🕹️ Введите код Konami где угодно... если знаете его 😉</span>
+        <span>📄 Сайт работает офлайн благодаря Service Worker</span>
+      </div>
+    </div>
+
+    <!-- ВОЗМОЖНОСТИ -->
+    <section class="section" id="features">
+      <div class="container">
+        <h2 class="section-title reveal">Всё, что тут есть <span class="grad-text">вас ждёт</span></h2>
+        <p class="section-sub reveal">Каждая страница — отдельная демонстрация возможностей современного браузера без единой внешней библиотеки.</p>
+        <div class="grid grid-3">
+          <a class="card card-topline reveal hover-shine" href="games.html"><span class="icon-lg">🎮</span><h3>Аркада</h3><p>Змейка, 2048, крестики-нолики, «Память» и «Угадай число» — с рекордами в localStorage.</p><span class="card-link">Играть →</span></a>
+          <a class="card card-topline reveal hover-shine" href="apps.html"><span class="icon-lg">🧰</span><h3>Инструменты</h3><p>Калькулятор, задачи, заметки, таймер, конвертеры, генератор паролей и анализ текста.</p><span class="card-link">Открыть →</span></a>
+          <a class="card card-topline reveal hover-shine" href="gallery.html"><span class="icon-lg">🖼️</span><h3>Галерея</h3><p>Фильтры по категориям, лайтбокс с клавиатурной навигацией и красивые сгенерированные фото.</p><span class="card-link">Смотреть →</span></a>
+          <a class="card card-topline reveal hover-shine" href="quiz.html"><span class="icon-lg">❓</span><h3>Квиз</h3><p>12 вопросов с пояснениями, прогресс-бар, оценка результата и личный рекорд.</p><span class="card-link">Проверить себя →</span></a>
+          <a class="card card-topline reveal hover-shine" href="components.html"><span class="icon-lg">🧩</span><h3>UI-кит</h3><p>Кнопки, модалки, табы, аккордеоны, тултипы, карусель, тосты и ещё два десятка компонентов.</p><span class="card-link">Изучить →</span></a>
+          <a class="card card-topline reveal hover-shine" href="forms.html"><span class="icon-lg">📝</span><h3>Формы</h3><p>Валидация в реальном времени, маска телефона, сила пароля, drag-n-drop загрузка файлов.</p><span class="card-link">Заполнить →</span></a>
+          <a class="card card-topline reveal hover-shine" href="tables.html"><span class="icon-lg">📊</span><h3>Таблицы</h3><p>Сортировка, поиск, фильтры, пагинация и экспорт в CSV на живых данных.</p><span class="card-link">Посмотреть →</span></a>
+          <a class="card card-topline reveal hover-shine" href="media.html"><span class="icon-lg">🎨</span><h3>Медиа и звук</h3><p>Пианино, драм-машина, визуализация звука и canvas-демо: фракталы, частицы, «Жизнь».</p><span class="card-link">Послушать →</span></a>
+          <a class="card card-topline reveal hover-shine" href="blog.html"><span class="icon-lg">📰</span><h3>Блог</h3><p>Три полноценные статьи про GitHub Pages, CSS и JavaScript с оглавлением и кодом.</p><span class="card-link">Читать →</span></a>
+          <a class="card card-topline reveal hover-shine" href="faq.html"><span class="icon-lg">❔</span><h3>FAQ</h3><p>Аккордеон с ответами на частые вопросы — про сайт, хостинг и браузерные возможности.</p><span class="card-link">Спросить →</span></a>
+          <a class="card card-topline reveal hover-shine" href="about.html"><span class="icon-lg">👀</span><h3>О сайте</h3><p>Как и из чего собрана эта песочница: стек, таймлайн создания и «команда» проекта.</p><span class="card-link">Узнать →</span></a>
+          <a class="card card-topline reveal hover-shine" href="contact.html"><span class="icon-lg">✉️</span><h3>Контакты</h3><p>Форма связи, карта, соцсети и кнопка «скопировать почту» — всё как у взрослых.</p><span class="card-link">Написать →</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЖИВЫЕ ВИДЖЕТЫ -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title reveal">Живые <span class="grad-text">виджеты</span></h2>
+        <p class="section-sub reveal">Мелкие интерактивные игрушки прямо на главной странице.</p>
+        <div class="grid grid-2">
+          <div class="card reveal">
+            <h3>🎉 До Нового года</h3>
+            <p class="mb-16">Обратный отсчёт работает в любой день года — до ближайшего 1 января.</p>
+            <div class="grid grid-4" id="nyCountdown">
+              <div class="stat-box"><div class="num" id="nyD">—</div><div class="lbl">дней</div></div>
+              <div class="stat-box"><div class="num" id="nyH">—</div><div class="lbl">часов</div></div>
+              <div class="stat-box"><div class="num" id="nyM">—</div><div class="lbl">минут</div></div>
+              <div class="stat-box"><div class="num" id="nyS">—</div><div class="lbl">секунд</div></div>
+            </div>
+          </div>
+          <div class="card reveal">
+            <h3>🎲 Кубики</h3>
+            <p class="mb-16">Бросьте пару шестигранных костей — честный <code>Math.random()</code>.</p>
+            <div style="font-size:3.4rem; letter-spacing:8px" id="diceFace">🎲🎲</div>
+            <button class="btn btn-primary mt-16" id="diceBtn">Бросить!</button>
+            <p class="help-text mt-16" id="diceLog">Сумма: —</p>
+          </div>
+          <div class="card reveal">
+            <h3>💡 Случайный факт</h3>
+            <p id="factText" style="min-height:66px">Нажмите кнопку — и узнаете что-то новое.</p>
+            <button class="btn btn-secondary mt-16" id="factBtn">Ещё факт 🔁</button>
+          </div>
+          <div class="card reveal">
+            <h3>🎨 Цвет настроения</h3>
+            <p class="mb-16">Генератор случайного градиента — можно скопировать CSS-код одним кликом.</p>
+            <div id="moodPreview" style="height:86px; border-radius:12px; border:1px solid var(--border); margin-bottom:12px"></div>
+            <div class="flex gap-8">
+              <button class="btn btn-primary" id="moodBtn">Сгенерировать</button>
+              <button class="btn btn-secondary" data-copy id="moodCopy">Копировать CSS</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- СТЕК -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Из чего сделан <span class="grad-text">сайт</span></h2>
+        <p class="section-sub reveal">Никаких сборщиков и фреймворков — только ванильные веб-технологии. Файлы открываются и работают где угодно, включая GitHub Pages.</p>
+        <div class="grid grid-auto">
+          <div class="card reveal"><h3>HTML5</h3><div class="progress progress-striped mt-16"><div style="width:100%"></div></div><p class="mt-8">Семантическая разметка, 16 страниц</p></div>
+          <div class="card reveal"><h3>CSS3</h3><div class="progress progress-striped mt-16"><div style="width:95%"></div></div><p class="mt-8">Переменные, grid, анимации, темы</p></div>
+          <div class="card reveal"><h3>JavaScript</h3><div class="progress progress-striped mt-16"><div style="width:90%"></div></div><p class="mt-8">ES-модули духа: canvas, Web Audio, Storage</p></div>
+          <div class="card reveal"><h3>PWA</h3><div class="progress progress-striped mt-16"><div style="width:80%"></div></div><p class="mt-8">Манифест + Service Worker = офлайн-режим</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-alt center">
+      <div class="container reveal">
+        <h2 class="section-title">Готовы исследовать? <span class="grad-text">Поехали!</span></h2>
+        <p class="section-sub" style="margin-inline:auto">Начните с любой страницы — или попробуйте найти все пасхалки.</p>
+        <div class="cta">
+          <a href="games.html" class="btn btn-primary btn-lg">🎮 В аркаду</a>
+          <a href="components.html" class="btn btn-lg btn-neon">🧩 UI-кит</a>
+          <a href="https://github.com/GoShadowS/Test-Site-for-friends" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">💻 Исходники на GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>🚀 DemoVerse</h4>
+          <p style="font-size:.9rem" class="muted">Многостраничная песочница, созданная агентом Arena.ai для демонстрации того, что умеет чистый HTML + CSS + JavaScript. Хостится на GitHub Pages.</p>
+          <button class="btn btn-sm btn-secondary mt-16" id="achvBtn">🏆 Достижения: <span id="achvCount">0/15</span></button>
+        </div>
+        <div>
+          <h4>Интерактив</h4>
+          <ul>
+            <li><a href="games.html">🎮 Игры</a></li>
+            <li><a href="quiz.html">❓ Квиз</a></li>
+            <li><a href="media.html">🎨 Медиа и звук</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инструменты</h4>
+          <ul>
+            <li><a href="apps.html">🧰 Приложения</a></li>
+            <li><a href="forms.html">📝 Формы</a></li>
+            <li><a href="tables.html">📊 Таблицы</a></li>
+            <li><a href="components.html">🧩 UI-кит</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инфо</h4>
+          <ul>
+            <li><a href="about.html">👀 О сайте</a></li>
+            <li><a href="blog.html">📰 Блог</a></li>
+            <li><a href="gallery.html">🖼️ Галерея</a></li>
+            <li><a href="faq.html">❔ FAQ</a></li>
+            <li><a href="contact.html">✉️ Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> DemoVerse · сделано 💜 агентом <a href="https://arena.ai" target="_blank" rel="noopener">Arena.ai</a></span>
+        <span class="mono">🕒 <span id="clock"></span></span>
+        <span>Визитов на этом устройстве: <b id="visits">1</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backTop" title="Наверх">↑</button>
+  <div id="cookieBanner">
+    <span style="flex:1; min-width:220px">🍪 Мы храним настройки (тема, рекорды, достижения) в localStorage вашего браузера. Никаких серверов и трекеров.</span>
+    <button class="btn btn-primary btn-sm" id="cookieOk">Понятно!</button>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script defer>
+    /* ---- частицы в hero ---- */
+    (function () {
+      const cv = document.getElementById("particles");
+      if (!cv) return;
+      const ctx = cv.getContext("2d");
+      let W, H, pts = [];
+      function resize() {
+        W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight;
+        pts = Array.from({ length: Math.min(70, W / 16) }, () => ({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - .5) * .5, vy: (Math.random() - .5) * .5,
+          r: Math.random() * 2 + .6
+        }));
+      }
+      resize(); addEventListener("resize", resize);
+      (function loop() {
+        ctx.clearRect(0, 0, W, H);
+        const light = document.documentElement.dataset.theme === "light";
+        for (const p of pts) {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7);
+          ctx.fillStyle = light ? "rgba(124,58,237,.5)" : "rgba(125,211,252,.75)"; ctx.fill();
+        }
+        for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+          const a = pts[i], b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < 110) {
+            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = `rgba(124,58,237,${(1 - d / 110) * .35})`; ctx.stroke();
+          }
+        }
+        requestAnimationFrame(loop);
+      })();
+    })();
+
+    /* ---- печатающийся текст ---- */
+    (function () {
+      const el = document.getElementById("typeText");
+      if (!el) return;
+      const phrases = [
+        "Это многостраничный сайт-песочница со всем, что только возможно…",
+        "Игры, квизы, инструменты, галерея, блог и медиа — на чистом JS.",
+        "Переключите тему, найдите пасхалки, соберите все достижения!",
+        "Работает офлайн, ставится на домашний экран, ничего не весит."
+      ];
+      let pi = 0, ci = 0, del = false;
+      (function type() {
+        const cur = phrases[pi];
+        el.textContent = cur.slice(0, ci);
+        if (!del && ci < cur.length) { ci++; setTimeout(type, 34); }
+        else if (!del) { del = true; setTimeout(type, 2100); }
+        else if (ci > 0) { ci--; setTimeout(type, 14); }
+        else { del = false; pi = (pi + 1) % phrases.length; setTimeout(type, 320); }
+      })();
+    })();
+
+    /* ---- до Нового года ---- */
+    (function () {
+      const d = document.getElementById("nyD"); if (!d) return;
+      const pad = n => String(n).padStart(2, "0");
+      setInterval(() => {
+        const now = new Date();
+        let ny = new Date(now.getFullYear() + 1, 0, 1);
+        if (now.getMonth() === 0 && now.getDate() === 1) ny = new Date(now.getFullYear(), 0, 1);
+        const diff = Math.max(0, ny - now);
+        document.getElementById("nyD").textContent = Math.floor(diff / 864e5);
+        document.getElementById("nyH").textContent = pad(Math.floor(diff / 36e5) % 24);
+        document.getElementById("nyM").textContent = pad(Math.floor(diff / 6e4) % 60);
+        document.getElementById("nyS").textContent = pad(Math.floor(diff / 1e3) % 60);
+      }, 1000);
+    })();
+
+    /* ---- кубики ---- */
+    (function () {
+      const btn = document.getElementById("diceBtn"); if (!btn) return;
+      const faces = ["⚀","⚁","⚂","⚃","⚄","⚅"];
+      btn.addEventListener("click", () => {
+        const face = document.getElementById("diceFace"), log = document.getElementById("diceLog");
+        let n = 0;
+        const iv = setInterval(() => {
+          face.textContent = faces[Math.floor(Math.random() * 6)] + faces[Math.floor(Math.random() * 6)];
+          if (++n > 9) {
+            clearInterval(iv);
+            const a = 1 + Math.floor(Math.random() * 6), b = 1 + Math.floor(Math.random() * 6);
+            face.textContent = faces[a - 1] + faces[b - 1];
+            log.textContent = `Сумма: ${a + b}` + (a === b ? " · Дубль! 🎉" : "");
+          }
+        }, 70);
+      });
+    })();
+
+    /* ---- факты ---- */
+    (function () {
+      const btn = document.getElementById("factBtn"); if (!btn) return;
+      const facts = [
+        "Первый в истории баг был настоящим: мотылёк, застрявший в реле компьютера Harvard Mark II в 1947 году.",
+        "JavaScript был создан Бренданом Айком всего за 10 дней в мае 1995 года.",
+        "Название языка Python — не в честь змеи, а в честь шоу «Летающий цирк Монти Пайтона».",
+        "Первое сообщение в интернете было словом «LO» — система упала на «LOGIN».",
+        "GitHub Pages появился в 2008 году и с тех пор hosts миллионы статических сайтов.",
+        "Символ @ в разных языках называют «собачкой», «улиткой», «обезьяньим хвостом» и даже «селёдкой».",
+        "В первом компьютерном мышке вместо шарика были два колеса.",
+        "Тёмная тема экономит заряд OLED-экранов — тёмные пиксели почти не светятся.",
+        "CSS-переменные (custom properties) поддерживаются всеми браузерами с 2017 года.",
+        "Service Worker — это отдельный поток JS, который может перехватывать сетевые запросы."
+      ];
+      let idx = -1;
+      btn.addEventListener("click", () => {
+        let next; do { next = Math.floor(Math.random() * facts.length); } while (next === idx);
+        idx = next;
+        const el = document.getElementById("factText");
+        el.style.opacity = 0;
+        setTimeout(() => { el.textContent = "💡 " + facts[idx]; el.style.transition = "opacity .3s"; el.style.opacity = 1; }, 200);
+      });
+    })();
+
+    /* ---- цвет настроения ---- */
+    (function () {
+      const btn = document.getElementById("moodBtn"); if (!btn) return;
+      const rnd = () => Math.floor(Math.random() * 360);
+      function gen() {
+        const css = `linear-gradient(135deg, hsl(${rnd()} 80% 55%), hsl(${rnd()} 80% 55%))`;
+        document.getElementById("moodPreview").style.background = css;
+        document.getElementById("moodCopy").dataset.copy = `background: ${css};`;
+        toast("Новый градиент сгенерирован 🎨", "info", 1600);
+      }
+      btn.addEventListener("click", gen);
+      gen();
+    })();
+  </script>
+</body>
+</html>

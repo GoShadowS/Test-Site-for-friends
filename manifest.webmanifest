@@ -1,0 +1,16 @@
+{
+  "name": "DemoVerse — сайт-песочница",
+  "short_name": "DemoVerse",
+  "description": "Многостраничный сайт-витрина: игры, инструменты, галерея, блог, квиз и достижения на чистом HTML/CSS/JS.",
+  "lang": "ru",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "icons": [
+    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

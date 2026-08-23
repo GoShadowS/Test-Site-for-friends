@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Медиа и звук — DemoVerse</title>
+  <meta name="description" content="Пианино на Web Audio API, драм-машина, визуализатор звука и canvas-демонстрации: фракталы, «Жизнь» Конвея, звёздное небо.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="preloader"><div class="loader-orbit"></div></div>
+  <div id="scrollProgress"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" id="brandLogo">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M10 8h6a8 8 0 0 1 0 16h-6V8zm4 3.6v8.8h2a4.4 4.4 0 0 0 0-8.8h-2z" fill="#fff"/></svg>
+        DemoVerse
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">🏠 Главная</a>
+        <div class="dropdown">
+          <button class="dropbtn">🎮 Интерактив ▾</button>
+          <div class="dropdown-menu">
+            <a href="games.html">🎮 Игры</a>
+            <a href="quiz.html">❓ Квиз</a>
+            <a href="media.html">🎨 Медиа и звук</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">🧰 Инструменты ▾</button>
+          <div class="dropdown-menu">
+            <a href="apps.html">🧰 Приложения</a>
+            <a href="forms.html">📝 Формы</a>
+            <a href="tables.html">📊 Таблицы</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">📚 Контент ▾</button>
+          <div class="dropdown-menu">
+            <a href="gallery.html">🖼️ Галерея</a>
+            <a href="blog.html">📰 Блог</a>
+            <a href="components.html">🧩 UI-кит</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">ℹ️ Инфо ▾</button>
+          <div class="dropdown-menu">
+            <a href="about.html">👀 О сайте</a>
+            <a href="faq.html">❔ FAQ</a>
+            <a href="contact.html">✉️ Контакты</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" title="Переключить тему">🌙</button>
+        <button class="icon-btn burger" id="burger" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs center"><a href="index.html">Главная</a><span class="sep">/</span><span>Медиа</span></div>
+        <h1>🎨 Медиа и <span class="grad-text">звук</span></h1>
+        <p class="sub">Звук синтезируется в браузере через Web Audio API, графика — на canvas. Никаких аудиофайлов вообще.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:8px">
+      <div class="container">
+        <div class="tabs" data-tabs>
+          <button class="tab active" data-tab="m-piano">🎹 Пианино</button>
+          <button class="tab" data-tab="m-drums">🥁 Драм-машина</button>
+          <button class="tab" data-tab="m-vis">📈 Визуализатор</button>
+          <button class="tab" data-tab="m-canvas">✨ Canvas-демо</button>
+        </div>
+
+        <!-- ПИАНИНО -->
+        <div class="tab-panel active" id="m-piano">
+          <div class="card">
+            <h3 class="center mb-16">🎹 Виртуальное пианино</h3>
+            <p class="muted center mb-16" style="font-size:.9rem">Играйте мышкой или клавиатурой: <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> <kbd>F</kbd> <kbd>G</kbd> <kbd>H</kbd> <kbd>J</kbd> <kbd>K</kbd> <kbd>L</kbd> — белые, <kbd>W</kbd> <kbd>E</kbd> <kbd>T</kbd> <kbd>Y</kbd> <kbd>U</kbd> — чёрные. Слайдер добавляет эха-повторы.</p>
+            <div class="piano" id="piano"></div>
+            <div class="field mt-24" style="max-width:420px; margin-inline:auto">
+              <label>Громкость: <b id="volOut">50</b>%</label>
+              <input type="range" id="pianoVol" min="0" max="100" value="50">
+            </div>
+          </div>
+        </div>
+
+        <!-- ДРАМ-МАШИНА -->
+        <div class="tab-panel" id="m-drums">
+          <div class="card">
+            <h3 class="center mb-16">🥁 Драм-машина (8 шагов)</h3>
+            <p class="muted center mb-24" style="font-size:.9rem">Кликайте по ячейкам, задайте темп и запустите петлю. Все звуки синтезируются на лету.</p>
+            <div style="overflow-x:auto">
+              <div class="seq-grid" id="seqGrid" style="grid-template-columns:90px repeat(8, 34px); justify-content:center; gap:6px 8px"></div>
+            </div>
+            <div class="flex gap-14 mt-24" style="justify-content:center; flex-wrap:wrap">
+              <button class="btn btn-primary" id="seqPlay">▶ Играть</button>
+              <button class="btn btn-secondary" id="seqClear">Очистить</button>
+              <button class="btn btn-secondary" id="seqRandom">🎲 Случайный бит</button>
+            </div>
+            <div class="field mt-16" style="max-width:420px; margin-inline:auto">
+              <label>Темп: <b id="bpmOut">120</b> BPM</label>
+              <input type="range" id="seqBpm" min="60" max="200" value="120">
+            </div>
+          </div>
+        </div>
+
+        <!-- ВИЗУАЛИЗАТОР -->
+        <div class="tab-panel" id="m-vis">
+          <div class="card center">
+            <h3 class="mb-16">📈 Визуализатор звука</h3>
+            <p class="muted mb-16" style="font-size:.9rem">Нажмите «Демо-мелодия» — сайт сыграет синусоидальную мелодию и нарисует её спектр. Или включите микрофон 🔊</p>
+            <canvas id="visCanvas" class="game-canvas" width="640" height="200" style="width:100%; max-width:640px"></canvas>
+            <div class="flex gap-14 mt-16" style="justify-content:center; flex-wrap:wrap">
+              <button class="btn btn-primary" id="melodyBtn">🎵 Демо-мелодия</button>
+              <button class="btn btn-secondary" id="micBtn">🎤 Микрофон</button>
+              <button class="btn btn-ghost" id="stopVisBtn">⏹ Стоп</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CANVAS -->
+        <div class="tab-panel" id="m-canvas">
+          <div class="card">
+            <div class="flex-between mb-16" style="flex-wrap:wrap">
+              <div class="chips" id="canvasTabs">
+                <span class="chip active" data-cv="stars">🌌 Звёздное небо</span>
+                <span class="chip" data-cv="fractal">🌳 Фрактал</span>
+                <span class="chip" data-cv="life">🦠 Жизнь</span>
+                <span class="chip" data-cv="bubbles">🫧 Пузыри</span>
+              </div>
+              <button class="btn btn-secondary btn-sm" id="cvRestart">🔄 Перезапустить</button>
+            </div>
+            <canvas id="demoCanvas" class="game-canvas" width="900" height="420" style="width:100%"></canvas>
+            <p class="help-text center mt-16" id="cvHint">Двигайте мышью по canvas — звёзды реагируют на курсор.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>🚀 DemoVerse</h4>
+          <p style="font-size:.9rem" class="muted">Многостраничная песочница, созданная агентом Arena.ai для демонстрации того, что умеет чистый HTML + CSS + JavaScript. Хостится на GitHub Pages.</p>
+          <button class="btn btn-sm btn-secondary mt-16" id="achvBtn">🏆 Достижения: <span id="achvCount">0/15</span></button>
+        </div>
+        <div>
+          <h4>Интерактив</h4>
+          <ul>
+            <li><a href="games.html">🎮 Игры</a></li>
+            <li><a href="quiz.html">❓ Квиз</a></li>
+            <li><a href="media.html">🎨 Медиа и звук</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инструменты</h4>
+          <ul>
+            <li><a href="apps.html">🧰 Приложения</a></li>
+            <li><a href="forms.html">📝 Формы</a></li>
+            <li><a href="tables.html">📊 Таблицы</a></li>
+            <li><a href="components.html">🧩 UI-кит</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инфо</h4>
+          <ul>
+            <li><a href="about.html">👀 О сайте</a></li>
+            <li><a href="blog.html">📰 Блог</a></li>
+            <li><a href="gallery.html">🖼️ Галерея</a></li>
+            <li><a href="faq.html">❔ FAQ</a></li>
+            <li><a href="contact.html">✉️ Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> DemoVerse · сделано 💜 агентом <a href="https://arena.ai" target="_blank" rel="noopener">Arena.ai</a></span>
+        <span class="mono">🕒 <span id="clock"></span></span>
+        <span>Визитов на этом устройстве: <b id="visits">1</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backTop" title="Наверх">↑</button>
+  <div id="cookieBanner">
+    <span style="flex:1; min-width:220px">🍪 Мы храним настройки в localStorage вашего браузера.</span>
+    <button class="btn btn-primary btn-sm" id="cookieOk">Понятно!</button>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/media.js" defer></script>
+</body>
+</html>

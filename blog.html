@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог — DemoVerse</title>
+  <meta name="description" content="Статьи о веб-разработке: как работает GitHub Pages, приёмы современного CSS и JavaScript без фреймворков.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="preloader"><div class="loader-orbit"></div></div>
+  <div id="scrollProgress"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" id="brandLogo">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M10 8h6a8 8 0 0 1 0 16h-6V8zm4 3.6v8.8h2a4.4 4.4 0 0 0 0-8.8h-2z" fill="#fff"/></svg>
+        DemoVerse
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">🏠 Главная</a>
+        <div class="dropdown">
+          <button class="dropbtn">🎮 Интерактив ▾</button>
+          <div class="dropdown-menu">
+            <a href="games.html">🎮 Игры</a>
+            <a href="quiz.html">❓ Квиз</a>
+            <a href="media.html">🎨 Медиа и звук</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">🧰 Инструменты ▾</button>
+          <div class="dropdown-menu">
+            <a href="apps.html">🧰 Приложения</a>
+            <a href="forms.html">📝 Формы</a>
+            <a href="tables.html">📊 Таблицы</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">📚 Контент ▾</button>
+          <div class="dropdown-menu">
+            <a href="gallery.html">🖼️ Галерея</a>
+            <a href="blog.html">📰 Блог</a>
+            <a href="components.html">🧩 UI-кит</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">ℹ️ Инфо ▾</button>
+          <div class="dropdown-menu">
+            <a href="about.html">👀 О сайте</a>
+            <a href="faq.html">❔ FAQ</a>
+            <a href="contact.html">✉️ Контакты</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" title="Переключить тему">🌙</button>
+        <button class="icon-btn burger" id="burger" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs center"><a href="index.html">Главная</a><span class="sep">/</span><span>Блог</span></div>
+        <h1>📰 Блог <span class="grad-text">о вебе</span></h1>
+        <p class="sub">Три полноценные статьи — про хостинг на GitHub Pages, современный CSS и жизнь без фреймворков.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:16px">
+      <div class="container">
+        <div class="grid grid-3">
+          <a class="card post-card reveal hover-shine" href="article-1.html">
+            <div class="post-cover" style="background:linear-gradient(135deg,#7c3aed,#3b1d8a)">🐙</div>
+            <div class="post-meta"><span>📅 2026</span><span class="badge badge-primary">хостинг</span><span>⏱️ 7 мин</span></div>
+            <h3>Как работает GitHub Pages: полный гайд</h3>
+            <p>Бесплатный хостинг статических сайтов прямо из репозитория: включение, ветки, кастомные домены и подводные камни.</p>
+            <span class="card-link">Читать статью →</span>
+          </a>
+          <a class="card post-card reveal hover-shine" href="article-2.html">
+            <div class="post-cover" style="background:linear-gradient(135deg,#06b6d4,#155e75)">🎨</div>
+            <div class="post-meta"><span>📅 2026</span><span class="badge badge-info">CSS</span><span>⏱️ 6 мин</span></div>
+            <h3>10 приёмов современного CSS</h3>
+            <p>Переменные, clamp(), aspect-ratio, backdrop-filter и другие штуки, из-за которых препроцессоры больше не нужны.</p>
+            <span class="card-link">Читать статью →</span>
+          </a>
+          <a class="card post-card reveal hover-shine" href="article-3.html">
+            <div class="post-cover" style="background:linear-gradient(135deg,#f472b6,#7c3aed)">⚡</div>
+            <div class="post-meta"><span>📅 2026</span><span class="badge badge-danger">JavaScript</span><span>⏱️ 8 мин</span></div>
+            <h3>JavaScript без фреймворков: зачем и почему</h3>
+            <p>Этот сайт написан на ванильном JS. Рассказываем, каких возможностей браузера уже хватает и когда фреймворк всё-таки нужен.</p>
+            <span class="card-link">Читать статью →</span>
+          </a>
+        </div>
+
+        <div class="card mt-24 reveal">
+          <h3 class="mb-8">💬 Комментарии</h3>
+          <p class="muted">Комментарии — демо (сайт статический, сервера нет). Но вы можете оставить мысль в <a href="https://github.com/GoShadowS/Test-Site-for-friends/issues" target="_blank" rel="noopener">issues репозитория</a> или через <a href="contact.html">форму связи</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>🚀 DemoVerse</h4>
+          <p style="font-size:.9rem" class="muted">Многостраничная песочница, созданная агентом Arena.ai для демонстрации того, что умеет чистый HTML + CSS + JavaScript. Хостится на GitHub Pages.</p>
+          <button class="btn btn-sm btn-secondary mt-16" id="achvBtn">🏆 Достижения: <span id="achvCount">0/15</span></button>
+        </div>
+        <div>
+          <h4>Интерактив</h4>
+          <ul>
+            <li><a href="games.html">🎮 Игры</a></li>
+            <li><a href="quiz.html">❓ Квиз</a></li>
+            <li><a href="media.html">🎨 Медиа и звук</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инструменты</h4>
+          <ul>
+            <li><a href="apps.html">🧰 Приложения</a></li>
+            <li><a href="forms.html">📝 Формы</a></li>
+            <li><a href="tables.html">📊 Таблицы</a></li>
+            <li><a href="components.html">🧩 UI-кит</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инфо</h4>
+          <ul>
+            <li><a href="about.html">👀 О сайте</a></li>
+            <li><a href="blog.html">📰 Блог</a></li>
+            <li><a href="gallery.html">🖼️ Галерея</a></li>
+            <li><a href="faq.html">❔ FAQ</a></li>
+            <li><a href="contact.html">✉️ Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> DemoVerse · сделано 💜 агентом <a href="https://arena.ai" target="_blank" rel="noopener">Arena.ai</a></span>
+        <span class="mono">🕒 <span id="clock"></span></span>
+        <span>Визитов на этом устройстве: <b id="visits">1</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backTop" title="Наверх">↑</button>
+  <div id="cookieBanner">
+    <span style="flex:1; min-width:220px">🍪 Мы храним настройки в localStorage вашего браузера.</span>
+    <button class="btn btn-primary btn-sm" id="cookieOk">Понятно!</button>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

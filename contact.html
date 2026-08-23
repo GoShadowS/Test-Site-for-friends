@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — DemoVerse</title>
+  <meta name="description" content="Свяжитесь с автором DemoVerse: форма связи, карта, ссылки на GitHub и почту.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="preloader"><div class="loader-orbit"></div></div>
+  <div id="scrollProgress"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" id="brandLogo">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M10 8h6a8 8 0 0 1 0 16h-6V8zm4 3.6v8.8h2a4.4 4.4 0 0 0 0-8.8h-2z" fill="#fff"/></svg>
+        DemoVerse
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">🏠 Главная</a>
+        <div class="dropdown">
+          <button class="dropbtn">🎮 Интерактив ▾</button>
+          <div class="dropdown-menu">
+            <a href="games.html">🎮 Игры</a>
+            <a href="quiz.html">❓ Квиз</a>
+            <a href="media.html">🎨 Медиа и звук</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">🧰 Инструменты ▾</button>
+          <div class="dropdown-menu">
+            <a href="apps.html">🧰 Приложения</a>
+            <a href="forms.html">📝 Формы</a>
+            <a href="tables.html">📊 Таблицы</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">📚 Контент ▾</button>
+          <div class="dropdown-menu">
+            <a href="gallery.html">🖼️ Галерея</a>
+            <a href="blog.html">📰 Блог</a>
+            <a href="components.html">🧩 UI-кит</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">ℹ️ Инфо ▾</button>
+          <div class="dropdown-menu">
+            <a href="about.html">👀 О сайте</a>
+            <a href="faq.html">❔ FAQ</a>
+            <a href="contact.html">✉️ Контакты</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" title="Переключить тему">🌙</button>
+        <button class="icon-btn burger" id="burger" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs center"><a href="index.html">Главная</a><span class="sep">/</span><span>Контакты</span></div>
+        <h1>✉️ <span class="grad-text">Контакты</span></h1>
+        <p class="sub">Написать, поблагодарить, сообщить о баге или просто изучить страницу контактов «как у взрослых».</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:16px">
+      <div class="container">
+        <div class="grid grid-3 mb-24">
+          <div class="card card-topline reveal center">
+            <span class="icon-lg">📧</span>
+            <h3>Почта</h3>
+            <p class="mono mb-16" style="font-size:.9rem">hello@demoverse.example</p>
+            <button class="btn btn-secondary btn-sm" data-copy="hello@demoverse.example">📋 Скопировать</button>
+          </div>
+          <div class="card card-topline reveal center">
+            <span class="icon-lg">🐙</span>
+            <h3>GitHub</h3>
+            <p class="mb-16">Исходники, issues и форки</p>
+            <a class="btn btn-secondary btn-sm" href="https://github.com/GoShadowS/Test-Site-for-friends" target="_blank" rel="noopener">Открыть репозиторий</a>
+          </div>
+          <div class="card card-topline reveal center">
+            <span class="icon-lg">⏱️</span>
+            <h3>Ответ</h3>
+            <p class="mb-16">Обычно быстрее, чем остывает кофе</p>
+            <span class="badge badge-success">онлайн 24/7</span>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3 class="mb-24">📨 Написать сообщение</h3>
+            <form id="contactForm" novalidate>
+              <div class="field">
+                <label for="ctName">Ваше имя</label>
+                <input class="input" id="ctName" placeholder="Как к вам обращаться?">
+              </div>
+              <div class="field">
+                <label for="ctEmail">Email для ответа</label>
+                <input class="input" id="ctEmail" type="email" placeholder="you@example.com">
+              </div>
+              <div class="field">
+                <label for="ctMsg">Сообщение</label>
+                <textarea class="textarea" id="ctMsg" placeholder="Ваше сообщение…"></textarea>
+              </div>
+              <label class="check mb-16"><input type="checkbox" id="ctCopy"> Отправить копию мне (демо)</label>
+              <button class="btn btn-primary btn-block" type="submit" id="ctSubmit">Отправить сообщение 🚀</button>
+            </form>
+          </div>
+          <div>
+            <div class="card mb-24" style="padding:0; overflow:hidden">
+              <iframe
+                title="Карта"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=36.2300%2C49.9800%2C36.2900%2C50.0200&amp;layer=mapnik"
+                style="width:100%; height:240px; border:0; display:block" loading="lazy"></iframe>
+            </div>
+            <div class="card">
+              <h3 class="mb-16">🗺️ Мы на карте</h3>
+              <p class="muted mb-16" style="font-size:.92rem">У сайта нет офиса, но если бы был — он был бы здесь: Харьков-сити, интернет.</p>
+              <div class="chips">
+                <span class="chip">🌍 Весь мир</span>
+                <span class="chip">🕐 UTC+3</span>
+                <span class="chip">🌐 RU / EN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>🚀 DemoVerse</h4>
+          <p style="font-size:.9rem" class="muted">Многостраничная песочница, созданная агентом Arena.ai для демонстрации того, что умеет чистый HTML + CSS + JavaScript. Хостится на GitHub Pages.</p>
+          <button class="btn btn-sm btn-secondary mt-16" id="achvBtn">🏆 Достижения: <span id="achvCount">0/15</span></button>
+        </div>
+        <div>
+          <h4>Интерактив</h4>
+          <ul>
+            <li><a href="games.html">🎮 Игры</a></li>
+            <li><a href="quiz.html">❓ Квиз</a></li>
+            <li><a href="media.html">🎨 Медиа и звук</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инструменты</h4>
+          <ul>
+            <li><a href="apps.html">🧰 Приложения</a></li>
+            <li><a href="forms.html">📝 Формы</a></li>
+            <li><a href="tables.html">📊 Таблицы</a></li>
+            <li><a href="components.html">🧩 UI-кит</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инфо</h4>
+          <ul>
+            <li><a href="about.html">👀 О сайте</a></li>
+            <li><a href="blog.html">📰 Блог</a></li>
+            <li><a href="gallery.html">🖼️ Галерея</a></li>
+            <li><a href="faq.html">❔ FAQ</a></li>
+            <li><a href="contact.html">✉️ Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> DemoVerse · сделано 💜 агентом <a href="https://arena.ai" target="_blank" rel="noopener">Arena.ai</a></span>
+        <span class="mono">🕒 <span id="clock"></span></span>
+        <span>Визитов на этом устройстве: <b id="visits">1</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backTop" title="Наверх">↑</button>
+  <div id="cookieBanner">
+    <span style="flex:1; min-width:220px">🍪 Мы храним настройки в localStorage вашего браузера.</span>
+    <button class="btn btn-primary btn-sm" id="cookieOk">Понятно!</button>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script defer>
+    document.getElementById("contactForm")?.addEventListener("submit", e => {
+      e.preventDefault();
+      const name = document.getElementById("ctName").value.trim();
+      const email = document.getElementById("ctEmail").value.trim();
+      const msg = document.getElementById("ctMsg").value.trim();
+      if (name.length < 2) return toast("Введите имя 🙂", "warning");
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return toast("Email выглядит странно 🤔", "warning");
+      if (msg.length < 10) return toast("Сообщение слишком короткое ✍️", "warning");
+      const btn = document.getElementById("ctSubmit");
+      btn.classList.add("loading");
+      setTimeout(() => {
+        btn.classList.remove("loading");
+        unlockAchievement("form");
+        openModal(`<div class="modal-head"><h3>📨 Сообщение «отправлено»!</h3><button class="icon-btn" data-close>✕</button></div>
+          <p>Спасибо, <b>${name.split(" ")[0]}</b>! На <code>${email}</code> «пришёл» бы ответ, если бы у сайта был сервер 🙂</p>
+          <p class="muted mt-16">Это демо-форма: статический сайт не умеет отправлять почту. Но ваш ввод валидирован по-настоящему!</p>
+          <button class="btn btn-primary btn-block mt-24" data-close>Хорошо!</button>`);
+        e.target.reset();
+      }, 1100);
+    });
+  </script>
+</body>
+</html>

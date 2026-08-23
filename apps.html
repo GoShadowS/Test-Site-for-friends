@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приложения — DemoVerse</title>
+  <meta name="description" content="Восемь мини-приложений: калькулятор, задачи, заметки, секундомер с таймером, конвертеры единиц и валют, генератор паролей, анализ текста и цвета.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="preloader"><div class="loader-orbit"></div></div>
+  <div id="scrollProgress"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" id="brandLogo">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M10 8h6a8 8 0 0 1 0 16h-6V8zm4 3.6v8.8h2a4.4 4.4 0 0 0 0-8.8h-2z" fill="#fff"/></svg>
+        DemoVerse
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">🏠 Главная</a>
+        <div class="dropdown">
+          <button class="dropbtn">🎮 Интерактив ▾</button>
+          <div class="dropdown-menu">
+            <a href="games.html">🎮 Игры</a>
+            <a href="quiz.html">❓ Квиз</a>
+            <a href="media.html">🎨 Медиа и звук</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">🧰 Инструменты ▾</button>
+          <div class="dropdown-menu">
+            <a href="apps.html">🧰 Приложения</a>
+            <a href="forms.html">📝 Формы</a>
+            <a href="tables.html">📊 Таблицы</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">📚 Контент ▾</button>
+          <div class="dropdown-menu">
+            <a href="gallery.html">🖼️ Галерея</a>
+            <a href="blog.html">📰 Блог</a>
+            <a href="components.html">🧩 UI-кит</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">ℹ️ Инфо ▾</button>
+          <div class="dropdown-menu">
+            <a href="about.html">👀 О сайте</a>
+            <a href="faq.html">❔ FAQ</a>
+            <a href="contact.html">✉️ Контакты</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" title="Переключить тему">🌙</button>
+        <button class="icon-btn burger" id="burger" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs center"><a href="index.html">Главная</a><span class="sep">/</span><span>Приложения</span></div>
+        <h1>🧰 Мини-<span class="grad-text">приложения</span></h1>
+        <p class="sub">Восемь рабочих инструментов. Данные (задачи, заметки, рекорды) сохраняются в localStorage вашего браузера.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:8px">
+      <div class="container">
+        <div class="tabs" data-tabs>
+          <button class="tab active" data-tab="app-calc">🔢 Калькулятор</button>
+          <button class="tab" data-tab="app-todo">✅ Задачи</button>
+          <button class="tab" data-tab="app-notes">🗒️ Заметки</button>
+          <button class="tab" data-tab="app-time">⏱️ Таймер</button>
+          <button class="tab" data-tab="app-conv">📐 Конвертеры</button>
+          <button class="tab" data-tab="app-pass">🔐 Пароли</button>
+          <button class="tab" data-tab="app-text">📄 Текст</button>
+          <button class="tab" data-tab="app-color">🎨 Цвета</button>
+        </div>
+
+        <!-- Калькулятор -->
+        <div class="tab-panel active" id="app-calc">
+          <div class="grid grid-2">
+            <div class="calc">
+              <div class="calc-screen"><div class="expr" id="calcExpr"></div><div class="res" id="calcRes">0</div></div>
+              <div class="calc-pad" id="calcPad">
+                <button class="calc-btn warn" data-k="C">C</button>
+                <button class="calc-btn warn" data-k="←">←</button>
+                <button class="calc-btn op" data-k="%">%</button>
+                <button class="calc-btn op" data-k="/">÷</button>
+                <button class="calc-btn" data-k="7">7</button><button class="calc-btn" data-k="8">8</button><button class="calc-btn" data-k="9">9</button>
+                <button class="calc-btn op" data-k="*">×</button>
+                <button class="calc-btn" data-k="4">4</button><button class="calc-btn" data-k="5">5</button><button class="calc-btn" data-k="6">6</button>
+                <button class="calc-btn op" data-k="-">−</button>
+                <button class="calc-btn" data-k="1">1</button><button class="calc-btn" data-k="2">2</button><button class="calc-btn" data-k="3">3</button>
+                <button class="calc-btn op" data-k="+">+</button>
+                <button class="calc-btn" data-k="0" style="grid-column:span 2">0</button>
+                <button class="calc-btn" data-k=".">,</button>
+                <button class="calc-btn eq" data-k="=">=</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>История вычислений</h3>
+              <p class="muted mb-16" style="font-size:.88rem">Считает с приоритетом операций. Поддерживает ввод с клавиатуры.</p>
+              <div id="calcHistory" style="max-height:280px; overflow-y:auto"><p class="muted">Пока пусто — посчитайте что-нибудь!</p></div>
+              <button class="btn btn-secondary btn-sm mt-16" id="calcClear">Очистить историю</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Задачи -->
+        <div class="tab-panel" id="app-todo">
+          <div class="grid grid-2" style="align-items:start">
+            <div class="card">
+              <h3 class="mb-16">Список задач</h3>
+              <div class="flex gap-8 mb-16">
+                <input class="input" id="todoInput" placeholder="Что нужно сделать?" style="flex:1">
+                <button class="btn btn-primary" id="todoAdd">Добавить</button>
+              </div>
+              <div class="chips mb-16">
+                <span class="chip active" data-todo-filter="all">Все</span>
+                <span class="chip" data-todo-filter="active">Активные</span>
+                <span class="chip" data-todo-filter="done">Готовые</span>
+              </div>
+              <div id="todoList"></div>
+              <div class="flex-between mt-16">
+                <span class="help-text" id="todoCount">0 из 0 выполнено</span>
+                <button class="btn btn-danger btn-sm" id="todoClear">Удалить готовые</button>
+              </div>
+            </div>
+            <div class="card">
+              <h3>📊 Прогресс дня</h3>
+              <div class="center mb-16"><div class="quiz-result-circle" id="todoRing" style="--p:0"><span id="todoPct">0%</span></div></div>
+              <p class="muted center" style="font-size:.9rem">Процент выполненных задач. Данные не покидают ваш браузер.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Заметки -->
+        <div class="tab-panel" id="app-notes">
+          <div class="card">
+            <div class="flex-between mb-16">
+              <h3>🗒️ Автосохраняемая заметка</h3>
+              <span class="badge badge-success" id="noteStatus">сохранено</span>
+            </div>
+            <input class="input mb-16" id="noteTitle" placeholder="Заголовок заметки…" style="font-weight:700">
+            <textarea class="textarea" id="noteBody" style="min-height:200px" placeholder="Пишите что угодно — всё сохраняется автоматически при вводе…"></textarea>
+            <div class="flex gap-8 mt-16" style="flex-wrap:wrap">
+              <button class="btn btn-primary" id="noteSave">💾 Сохранить</button>
+              <button class="btn btn-secondary" id="noteDownload">⬇️ Скачать .txt</button>
+              <button class="btn btn-danger" id="noteClear">🗑️ Очистить</button>
+            </div>
+            <p class="help-text mt-16" id="noteMeta">Символов: 0 · Слов: 0</p>
+          </div>
+        </div>
+
+        <!-- Таймер -->
+        <div class="tab-panel" id="app-time">
+          <div class="grid grid-2">
+            <div class="card center">
+              <h3 class="mb-16">⏱️ Секундомер</h3>
+              <div class="mono" style="font-size:3rem; font-weight:800" id="swDisplay">00:00.0</div>
+              <div class="flex gap-8 mt-16" style="justify-content:center">
+                <button class="btn btn-primary" id="swStart">Старт</button>
+                <button class="btn btn-secondary" id="swLap" disabled>Круг</button>
+                <button class="btn btn-ghost" id="swReset">Сброс</button>
+              </div>
+              <div id="swLaps" style="margin-top:14px; font-size:.9rem"></div>
+            </div>
+            <div class="card center">
+              <h3 class="mb-16">⏳ Таймер обратного отсчёта</h3>
+              <div class="mono" style="font-size:3rem; font-weight:800" id="tmDisplay">05:00</div>
+              <div class="flex gap-8 mt-16" style="justify-content:center; flex-wrap:wrap">
+                <button class="btn btn-secondary btn-sm" data-tm="1">1 мин</button>
+                <button class="btn btn-secondary btn-sm" data-tm="3">3 мин</button>
+                <button class="btn btn-secondary btn-sm" data-tm="5">5 мин</button>
+                <button class="btn btn-secondary btn-sm" data-tm="10">10 мин</button>
+              </div>
+              <div class="flex gap-8 mt-16" style="justify-content:center">
+                <button class="btn btn-primary" id="tmStart">Старт</button>
+                <button class="btn btn-ghost" id="tmReset">Сброс</button>
+              </div>
+              <div class="progress mt-16"><div id="tmBar" style="width:100%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Конвертеры -->
+        <div class="tab-panel" id="app-conv">
+          <div class="grid grid-2">
+            <div class="card">
+              <h3 class="mb-16">📏 Единицы длины и веса</h3>
+              <div class="flex gap-8 mb-16">
+                <input class="input" type="number" id="convVal" value="100" style="flex:1">
+                <select class="select" id="convFrom" style="max-width:160px"></select>
+                <select class="select" id="convTo" style="max-width:160px"></select>
+              </div>
+              <div class="alert alert-info">🔄 <b id="convResult">—</b></div>
+              <h3 class="mb-16 mt-24">🌡️ Температура</h3>
+              <div class="flex gap-8 mb-16">
+                <input class="input" type="number" id="tempVal" value="25" style="flex:1">
+                <select class="select" id="tempFrom"><option value="c">°C</option><option value="f">°F</option><option value="k">K</option></select>
+              </div>
+              <div id="tempOut" class="mono" style="font-size:1.05rem"></div>
+            </div>
+            <div class="card">
+              <h3 class="mb-16">💱 Конвертер валют (офлайн-курсы)</h3>
+              <p class="muted mb-16" style="font-size:.85rem">Примерные курсы зашиты в код — это демо без обращения к серверу.</p>
+              <div class="flex gap-8 mb-16">
+                <input class="input" type="number" id="curVal" value="100" style="flex:1">
+                <select class="select" id="curFrom"></select>
+                <select class="select" id="curTo"></select>
+              </div>
+              <div class="alert alert-success" id="curOut">—</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Пароли -->
+        <div class="tab-panel" id="app-pass">
+          <div class="grid grid-2">
+            <div class="card">
+              <h3 class="mb-16">🔐 Генератор паролей</h3>
+              <div class="field">
+                <label>Длина: <b id="passLenVal">16</b></label>
+                <input type="range" id="passLen" min="6" max="40" value="16">
+              </div>
+              <label class="check mb-8"><input type="checkbox" id="passUpper" checked> Заглавные буквы (A-Z)</label>
+              <label class="check mb-8"><input type="checkbox" id="passLower" checked> Строчные буквы (a-z)</label>
+              <label class="check mb-8"><input type="checkbox" id="passDigits" checked> Цифры (0-9)</label>
+              <label class="check mb-16"><input type="checkbox" id="passSymbols"> Символы (!@#$…)</label>
+              <button class="btn btn-primary btn-block" id="passGen">🎲 Сгенерировать</button>
+            </div>
+            <div class="card center">
+              <div class="mono" id="passOut" style="font-size:1.25rem; word-break:break-all; min-height:64px">—</div>
+              <div class="strength-bar"><div id="passStrength"></div></div>
+              <p class="help-text mt-8" id="passStrengthTxt">Нажмите «Сгенерировать»</p>
+              <button class="btn btn-secondary mt-16" data-copy-id="passOut">📋 Копировать</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Текст -->
+        <div class="tab-panel" id="app-text">
+          <div class="grid grid-2">
+            <div class="card">
+              <h3 class="mb-16">📄 Анализ текста</h3>
+              <textarea class="textarea" id="textIn" placeholder="Вставьте или напишите текст — статистика обновится на лету…">ДемоВселенная — это сайт, на котором есть всё. Здесь живут игры, квизы и даже пианино.</textarea>
+            </div>
+            <div class="card">
+              <div class="grid grid-2">
+                <div class="stat-box"><div class="num" id="tsChars">0</div><div class="lbl">символов</div></div>
+                <div class="stat-box"><div class="num" id="tsWords">0</div><div class="lbl">слов</div></div>
+                <div class="stat-box"><div class="num" id="tsSents">0</div><div class="lbl">предложений</div></div>
+                <div class="stat-box"><div class="num" id="tsRead">0</div><div class="lbl">мин чтения</div></div>
+              </div>
+              <h4 class="mt-16 mb-8" style="font-size:.95rem">Топ слов:</h4>
+              <div class="chips" id="tsTop"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Цвета -->
+        <div class="tab-panel" id="app-color">
+          <div class="grid grid-2">
+            <div class="card center">
+              <h3 class="mb-16">🎨 Исследователь цвета</h3>
+              <input type="color" id="colorPick" value="#7c3aed" style="width:110px; height:80px">
+              <div class="mono mt-16" id="colorInfo" style="font-size:.95rem; line-height:2"></div>
+            </div>
+            <div class="card">
+              <h3 class="mb-16">Оттенки</h3>
+              <div id="colorShades" class="grid" style="grid-template-columns:repeat(5,1fr); gap:8px"></div>
+              <p class="help-text mt-16">Кликните по оттенку, чтобы скопировать его HEX-код.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>🚀 DemoVerse</h4>
+          <p style="font-size:.9rem" class="muted">Многостраничная песочница, созданная агентом Arena.ai для демонстрации того, что умеет чистый HTML + CSS + JavaScript. Хостится на GitHub Pages.</p>
+          <button class="btn btn-sm btn-secondary mt-16" id="achvBtn">🏆 Достижения: <span id="achvCount">0/15</span></button>
+        </div>
+        <div>
+          <h4>Интерактив</h4>
+          <ul>
+            <li><a href="games.html">🎮 Игры</a></li>
+            <li><a href="quiz.html">❓ Квиз</a></li>
+            <li><a href="media.html">🎨 Медиа и звук</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инструменты</h4>
+          <ul>
+            <li><a href="apps.html">🧰 Приложения</a></li>
+            <li><a href="forms.html">📝 Формы</a></li>
+            <li><a href="tables.html">📊 Таблицы</a></li>
+            <li><a href="components.html">🧩 UI-кит</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инфо</h4>
+          <ul>
+            <li><a href="about.html">👀 О сайте</a></li>
+            <li><a href="blog.html">📰 Блог</a></li>
+            <li><a href="gallery.html">🖼️ Галерея</a></li>
+            <li><a href="faq.html">❔ FAQ</a></li>
+            <li><a href="contact.html">✉️ Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> DemoVerse · сделано 💜 агентом <a href="https://arena.ai" target="_blank" rel="noopener">Arena.ai</a></span>
+        <span class="mono">🕒 <span id="clock"></span></span>
+        <span>Визитов на этом устройстве: <b id="visits">1</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backTop" title="Наверх">↑</button>
+  <div id="cookieBanner">
+    <span style="flex:1; min-width:220px">🍪 Мы храним настройки в localStorage вашего браузера.</span>
+    <button class="btn btn-primary btn-sm" id="cookieOk">Понятно!</button>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/apps.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Формы — DemoVerse</title>
+  <meta name="description" content="Демонстрация форм: живая валидация, маска телефона, индикатор силы пароля, drag-n-drop загрузка и превью файлов.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0a0e1a">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="preloader"><div class="loader-orbit"></div></div>
+  <div id="scrollProgress"></div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" id="brandLogo">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M10 8h6a8 8 0 0 1 0 16h-6V8zm4 3.6v8.8h2a4.4 4.4 0 0 0 0-8.8h-2z" fill="#fff"/></svg>
+        DemoVerse
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">🏠 Главная</a>
+        <div class="dropdown">
+          <button class="dropbtn">🎮 Интерактив ▾</button>
+          <div class="dropdown-menu">
+            <a href="games.html">🎮 Игры</a>
+            <a href="quiz.html">❓ Квиз</a>
+            <a href="media.html">🎨 Медиа и звук</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">🧰 Инструменты ▾</button>
+          <div class="dropdown-menu">
+            <a href="apps.html">🧰 Приложения</a>
+            <a href="forms.html">📝 Формы</a>
+            <a href="tables.html">📊 Таблицы</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">📚 Контент ▾</button>
+          <div class="dropdown-menu">
+            <a href="gallery.html">🖼️ Галерея</a>
+            <a href="blog.html">📰 Блог</a>
+            <a href="components.html">🧩 UI-кит</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">ℹ️ Инфо ▾</button>
+          <div class="dropdown-menu">
+            <a href="about.html">👀 О сайте</a>
+            <a href="faq.html">❔ FAQ</a>
+            <a href="contact.html">✉️ Контакты</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" title="Переключить тему">🌙</button>
+        <button class="icon-btn burger" id="burger" aria-label="Открыть меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="breadcrumbs center"><a href="index.html">Главная</a><span class="sep">/</span><span>Формы</span></div>
+        <h1>📝 Формы и <span class="grad-text">валидация</span></h1>
+        <p class="sub">Живая проверка полей, маска телефона, индикатор пароля, drag-n-drop файлов. Всё считается в браузере — на сервер ничего не уходит.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:16px">
+      <div class="container">
+        <div class="grid grid-2">
+
+          <!-- РЕГИСТРАЦИЯ -->
+          <div class="card">
+            <h3 class="mb-24">🆕 Регистрация с живой валидацией</h3>
+            <form id="regForm" novalidate>
+              <div class="field" id="f-name">
+                <label for="regName">Имя</label>
+                <input class="input" id="regName" placeholder="Иван Петров" autocomplete="name">
+                <span class="err-msg">Введите имя (минимум 2 символа)</span>
+              </div>
+              <div class="field" id="f-email">
+                <label for="regEmail">Email</label>
+                <input class="input" id="regEmail" type="email" placeholder="ivan@example.com" autocomplete="email">
+                <span class="err-msg">Похоже, это не email</span>
+              </div>
+              <div class="field" id="f-phone">
+                <label for="regPhone">Телефон (маска +7)</label>
+                <input class="input" id="regPhone" placeholder="+7 (999) 123-45-67" inputmode="tel">
+                <span class="err-msg">Введите 11 цифр</span>
+              </div>
+              <div class="field" id="f-pass">
+                <label for="regPass">Пароль</label>
+                <input class="input" id="regPass" type="password" placeholder="Минимум 8 символов">
+                <div class="strength-bar"><div id="regStrength"></div></div>
+                <span class="hint" id="regStrengthTxt">Стойкость: —</span>
+                <span class="err-msg">Слишком короткий пароль</span>
+              </div>
+              <div class="field" id="f-pass2">
+                <label for="regPass2">Повторите пароль</label>
+                <input class="input" id="regPass2" type="password" placeholder="Ещё раз">
+                <span class="err-msg">Пароли не совпадают</span>
+              </div>
+              <label class="check mb-16" id="f-agree">
+                <input type="checkbox" id="regAgree"> Согласен с <a href="faq.html">условиями</a> (демо)
+              </label>
+              <button class="btn btn-primary btn-block" type="submit">Зарегистрироваться 🚀</button>
+            </form>
+          </div>
+
+          <div>
+            <!-- ДЕМО-ЗАГРУЗКА -->
+            <div class="card mb-24">
+              <h3 class="mb-16">📤 Загрузка файлов (drag-n-drop)</h3>
+              <div id="dropZone" style="border:2px dashed var(--border); border-radius:14px; padding:34px; text-align:center; cursor:pointer; transition:.2s">
+                <div style="font-size:2.2rem">🗂️</div>
+                <p><b>Перетащите файлы сюда</b><br><span class="muted" style="font-size:.85rem">или кликните для выбора · картинки покажут превью</span></p>
+              </div>
+              <input type="file" id="fileInput" multiple accept="image/*,.txt,.pdf" hidden>
+              <div id="fileList" class="mt-16"></div>
+            </div>
+
+            <!-- РАЗНЫЕ КОНТРОЛЫ -->
+            <div class="card">
+              <h3 class="mb-16">🎛️ Разные контролы</h3>
+              <div class="field">
+                <label>Рост: <output id="rangeOut">170</output> см</label>
+                <input type="range" id="rangeDemo" min="140" max="210" value="170">
+              </div>
+              <div class="field">
+                <label>Любимый цвет сезона: <output id="colorOut">#7c3aed</output></label>
+                <input type="color" value="#7c3aed" oninput="document.getElementById('colorOut').textContent=this.value" style="width:100%">
+              </div>
+              <div class="field">
+                <label for="selDemo">Любимая страница сайта</label>
+                <select class="select" id="selDemo">
+                  <option>🎮 Игры</option><option>🧰 Приложения</option><option>🖼️ Галерея</option><option>❓ Квиз</option><option>🎨 Медиа</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Формат уведомлений</label>
+                <label class="check mb-8"><input type="radio" name="notif" checked> 📧 Email</label>
+                <label class="check mb-8"><input type="radio" name="notif"> 📱 Push</label>
+                <label class="check"><input type="radio" name="notif"> 🐌 Почтой России</label>
+              </div>
+              <label class="switch" style="display:inline-flex; align-items:center; gap:10px">
+                <input type="checkbox" id="subToggle"><span class="track"></span>
+                <span style="font-size:.9rem">Подписаться на новости (демо)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- ОБРАТНАЯ СВЯЗЬ -->
+        <div class="card mt-24" style="max-width:640px; margin-inline:auto">
+          <h3 class="mb-24">✉️ Форма обратной связи</h3>
+          <form id="feedbackForm" novalidate>
+            <div class="field" id="f-fb-name">
+              <label for="fbName">Как вас зовут?</label>
+              <input class="input" id="fbName" placeholder="Ваше имя">
+              <span class="err-msg">Введите имя</span>
+            </div>
+            <div class="field">
+              <label for="fbTopic">Тема</label>
+              <select class="select" id="fbTopic">
+                <option>💡 Предложение</option><option>🐞 Нашёл баг</option><option>❓ Вопрос</option><option>💜 Просто сказать спасибо</option>
+              </select>
+            </div>
+            <div class="field" id="f-fb-msg">
+              <label for="fbMsg">Сообщение <span class="muted" id="fbCount">0/300</span></label>
+              <textarea class="textarea" id="fbMsg" maxlength="300" placeholder="Напишите что-нибудь…"></textarea>
+              <span class="err-msg">Сообщение слишком короткое (мин. 10 символов)</span>
+            </div>
+            <button class="btn btn-primary" type="submit" id="fbSubmit">Отправить 📨</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>🚀 DemoVerse</h4>
+          <p style="font-size:.9rem" class="muted">Многостраничная песочница, созданная агентом Arena.ai для демонстрации того, что умеет чистый HTML + CSS + JavaScript. Хостится на GitHub Pages.</p>
+          <button class="btn btn-sm btn-secondary mt-16" id="achvBtn">🏆 Достижения: <span id="achvCount">0/15</span></button>
+        </div>
+        <div>
+          <h4>Интерактив</h4>
+          <ul>
+            <li><a href="games.html">🎮 Игры</a></li>
+            <li><a href="quiz.html">❓ Квиз</a></li>
+            <li><a href="media.html">🎨 Медиа и звук</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инструменты</h4>
+          <ul>
+            <li><a href="apps.html">🧰 Приложения</a></li>
+            <li><a href="forms.html">📝 Формы</a></li>
+            <li><a href="tables.html">📊 Таблицы</a></li>
+            <li><a href="components.html">🧩 UI-кит</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Инфо</h4>
+          <ul>
+            <li><a href="about.html">👀 О сайте</a></li>
+            <li><a href="blog.html">📰 Блог</a></li>
+            <li><a href="gallery.html">🖼️ Галерея</a></li>
+            <li><a href="faq.html">❔ FAQ</a></li>
+            <li><a href="contact.html">✉️ Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> DemoVerse · сделано 💜 агентом <a href="https://arena.ai" target="_blank" rel="noopener">Arena.ai</a></span>
+        <span class="mono">🕒 <span id="clock"></span></span>
+        <span>Визитов на этом устройстве: <b id="visits">1</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backTop" title="Наверх">↑</button>
+  <div id="cookieBanner">
+    <span style="flex:1; min-width:220px">🍪 Мы храним настройки в localStorage вашего браузера.</span>
+    <button class="btn btn-primary btn-sm" id="cookieOk">Понятно!</button>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/forms.js" defer></script>
+</body>
+</html>

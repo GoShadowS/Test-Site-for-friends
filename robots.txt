@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://goshadows.github.io/Test-Site-for-friends/sitemap.xml

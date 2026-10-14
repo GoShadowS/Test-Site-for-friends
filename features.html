@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Возможности Prism Launcher — Полный гид по функционалу</title>
+  <meta name="description" content="Разбор мощных возможностей Prism Launcher: мульти-инстансы, встроенный менеджер модов и шейдеров, интеграция с Modrinth и CurseForge, настройки Java, экспорт сборок и умный логгер ошибок.">
+  <meta name="keywords" content="функции Prism Launcher, мульти-инстансы Minecraft, менеджер модов Modrinth CurseForge, шейдеры Minecraft, логирование Minecraft">
+  
+  <meta property="og:title" content="Все возможности Prism Launcher — От А до Я">
+  <meta property="og:description" content="Узнайте, как устроен продвинутый менеджмент модов, шейдеров и версий Java в Prism Launcher.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://prismlauncher.org/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-link">
+        <svg class="brand-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="20,4 36,32 4,32" stroke="url(#prismGrad)" stroke-width="3.5" fill="rgba(139, 92, 246, 0.2)"/>
+          <circle cx="20" cy="22" r="4.5" fill="#06b6d4" />
+          <defs>
+            <linearGradient id="prismGrad" x1="4" y1="4" x2="36" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#a78bfa"/>
+              <stop offset="0.5" stop-color="#3b82f6"/>
+              <stop offset="1" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">Prism Launcher</span>
+          <span class="brand-subtitle">Community Edition</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Главная</a></li>
+          <li><a href="comparison.html" class="nav-link">Сравнение</a></li>
+          <li><a href="features.html" class="nav-link active">Возможности</a></li>
+          <li><a href="download.html" class="nav-link">Скачать</a></li>
+          <li><a href="about.html" class="nav-link">О проекте</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="download.html" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Скачать
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Функциональность</span>
+        <h1 class="section-title">Все ключевые возможности Prism</h1>
+        <p class="section-desc">
+          Prism Launcher создан геймерами и разработчиками для максимального комфорта при игре с модами и кастомизации Minecraft.
+        </p>
+      </div>
+
+      <!-- Feature 1: Мульти-инстансы -->
+      <article class="feature-detail-block">
+        <div class="feature-detail-content">
+          <div class="feature-detail-header">
+            <div class="feature-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h2 class="feature-detail-title">Мульти-инстансы и изоляция</h2>
+          </div>
+          <p class="feature-detail-lead">
+            Создавайте независимые копии Minecraft под любые задачи: отдельный инстанс для выживания с друзьями, отдельный для тестирования редстоуна, а третий — для тяжёлого техномагического модпака.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Автономные каталоги:</strong> каждый инстанс хранит свои сейвы, скриншоты, конфиги и опции управления.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Клонирование в один клик:</strong> легко создайте резервную копию или форк инстанса перед установкой новых модов.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Собственные иконки:</strong> выбирайте пользовательские PNG-иконки для легкого визуального поиска в списке сборок.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-detail-preview">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            </div>
+            <span class="mockup-title">Prism Launcher — Экземпляры</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mock-instance-list">
+              <div class="mock-instance-row active">
+                <div class="mock-row-left">
+                  <span class="mock-icon">⚡</span>
+                  <div>
+                    <div class="mock-name">Fabric SMP 1.20.4</div>
+                    <div class="mock-meta">Fabric 0.15.7 • 42 мода • Sodium/Iris</div>
+                  </div>
+                </div>
+                <span class="mock-loader">Готов к запуску</span>
+              </div>
+              <div class="mock-instance-row">
+                <div class="mock-row-left">
+                  <span class="mock-icon">⚙️</span>
+                  <div>
+                    <div class="mock-name">All The Mods 9</div>
+                    <div class="mock-meta">NeoForge 20.4.80 • 412 модов</div>
+                  </div>
+                </div>
+                <span class="mock-loader">Остановлен</span>
+              </div>
+              <div class="mock-instance-row">
+                <div class="mock-row-left">
+                  <span class="mock-icon">🏰</span>
+                  <div>
+                    <div class="mock-name">Classic GregTech 1.12.2</div>
+                    <div class="mock-meta">Forge 14.23.5.2860 • Java 8 OpenJ9</div>
+                  </div>
+                </div>
+                <span class="mock-loader">Остановлен</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Feature 2: Менеджер модов, ресурспаков и шейдеров -->
+      <article class="feature-detail-block">
+        <div class="feature-detail-content">
+          <div class="feature-detail-header">
+            <div class="feature-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <h2 class="feature-detail-title">Встроенный менеджер модов, шейдеров и текстур</h2>
+          </div>
+          <p class="feature-detail-lead">
+            Забудьте о ручном скачивании архивов и поиске папки <code>%appdata%/.minecraft</code>. Управляйте всем контентом инстанса прямо через удобную панель лаунчера.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Управление шейдерами:</strong> загрузка шейдерпаков (Complementary, BSL, Bliss) напрямую через Modrinth и CurseForge.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Быстрое включение/отключение:</strong> отключайте моды галочкой без необходимости удалять их с диска при поиске багов.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Проверка обновлений в 1 клик:</strong> лаунчер покажет, для каких модов вышли свежие апдейты, и обновит их безопасно.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-detail-preview">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            </div>
+            <span class="mockup-title">Управление модами инстанса</span>
+          </div>
+          <div class="mockup-body">
+            <div style="display:flex; flex-direction:column; gap:0.5rem;">
+              <div style="display:flex; justify-content:space-between; padding:0.5rem 0.8rem; background:rgba(255,255,255,0.03); border-radius:6px; font-size:0.82rem;">
+                <span style="color:#10b981;">✔ Sodium (mc1.20.4-0.5.8)</span>
+                <span style="color:#8b949e;">Modrinth [OK]</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; padding:0.5rem 0.8rem; background:rgba(255,255,255,0.03); border-radius:6px; font-size:0.82rem;">
+                <span style="color:#10b981;">✔ Iris Shaders (1.6.17)</span>
+                <span style="color:#8b949e;">Modrinth [OK]</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; padding:0.5rem 0.8rem; background:rgba(245,158,11,0.1); border-radius:6px; font-size:0.82rem;">
+                <span style="color:#f59e0b;">⟳ Lithium (0.12.1 → 0.12.2)</span>
+                <span style="color:#a78bfa; font-weight:600;">Доступно обновление</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; padding:0.5rem 0.8rem; background:rgba(255,255,255,0.02); border-radius:6px; font-size:0.82rem; opacity:0.6;">
+                <span style="color:#94a3b8;">✖ Distant Horizons (отключен)</span>
+                <span style="color:#64748b;">Неактивен</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Feature 3: Интеграция Modrinth и CurseForge -->
+      <article class="feature-detail-block">
+        <div class="feature-detail-content">
+          <div class="feature-detail-header">
+            <div class="feature-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+            </div>
+            <h2 class="feature-detail-title">Прямая интеграция с Modrinth и CurseForge</h2>
+          </div>
+          <p class="feature-detail-lead">
+            Объединённый поиск по двум крупнейшим мировым базам модов и модпаков прямо в лаунчере. Prism автоматически подбирает правильную версию файла под установленный загрузчик и версию Minecraft.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Умный фильтр совместимости:</strong> лаунчер скроет моды, не подходящие под ваш текущий загрузчик (Forge/Fabric/NeoForge).</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Автоматическая установка зависимостей:</strong> если мод требует Fabric API или Cloth Config, Prism Launcher вежливо предложит докачать их одним кликом.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Свобода выбора источника:</strong> можно отдавать предпочтение Modrinth за максимальную скорость отдачи или CurseForge за редкие моды.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-detail-preview">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            </div>
+            <span class="mockup-title">Поиск: "Optimization 1.20.4 Fabric"</span>
+          </div>
+          <div class="mockup-body">
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding:0.8rem; border-radius:6px; margin-bottom:0.75rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                <span style="font-weight:700; color:#fff;">Sodium</span>
+                <span style="color:#06b6d4; font-size:0.75rem;">Modrinth • 38M скачиваний</span>
+              </div>
+              <p style="font-size:0.78rem; color:#8b949e; line-height:1.4;">
+                Мощный рендер-движок, заменяющий рендерер Minecraft и кратно увеличивающий FPS.
+              </p>
+            </div>
+            <div style="border: 1px solid rgba(255,255,255,0.08); padding:0.8rem; border-radius:6px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                <span style="font-weight:700; color:#fff;">FerriteCore</span>
+                <span style="color:#f59e0b; font-size:0.75rem;">CurseForge • 22M скачиваний</span>
+              </div>
+              <p style="font-size:0.78rem; color:#8b949e; line-height:1.4;">
+                Оптимизация использования оперативной памяти в моделях и структурах игры.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Feature 4: Гибкие настройки Java и памяти -->
+      <article class="feature-detail-block">
+        <div class="feature-detail-content">
+          <div class="feature-detail-header">
+            <div class="feature-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h2 class="feature-detail-title">Гибкие настройки Java и памяти</h2>
+          </div>
+          <p class="feature-detail-lead">
+            Полный контроль над виртуальной машиной Java: от автоопределения установленных JDK до тонкой настройки аргументов запуска под процессоры AMD/Intel.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Автоматическое сканирование Java:</strong> лаунчер находит установленные Adoptium, Zulu, Oracle и GraalVM.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Индивидуальный выбор версии Java:</strong> запуск версий 1.7.10/1.12.2 на Java 8, а 1.20+ на Java 17/21 без конфликтов в переменных окружения.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Оптимизация GC:</strong> встроенные шаблоны аргументов для сборщиков мусора (G1GC, ZGC, Generational ZGC) для устранения микрофризов.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-detail-preview">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            </div>
+            <span class="mockup-title">Параметры Java — Инстанс #4</span>
+          </div>
+          <div class="mockup-body">
+            <div style="font-size:0.8rem; color:#8b949e; margin-bottom:0.5rem;">Java Runtime:</div>
+            <div style="background:rgba(255,255,255,0.05); padding:0.4rem 0.6rem; border-radius:4px; color:#34d399; margin-bottom:1rem; font-size:0.8rem;">
+              OpenJDK 21.0.2 (Eclipse Temurin) [64-bit]
+            </div>
+            <div style="font-size:0.8rem; color:#8b949e; margin-bottom:0.5rem;">Выделение ОЗУ:</div>
+            <div style="display:flex; justify-content:space-between; margin-bottom:1rem; color:#fff; font-size:0.85rem;">
+              <span>Мин: 2048 MB</span>
+              <span style="color:#a78bfa; font-weight:700;">Макс: 6144 MB</span>
+            </div>
+            <div style="font-size:0.8rem; color:#8b949e; margin-bottom:0.5rem;">JVM Флаги:</div>
+            <div style="background:#04070a; padding:0.6rem; border-radius:4px; font-size:0.75rem; color:#60a5fa; line-height:1.4;">
+              -XX:+UseG1GC -XX:G1ReservePercent=20 -XX:InitiatingHeapOccupancyPercent=15
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Feature 5: Экспорт / Импорт сборок -->
+      <article class="feature-detail-block">
+        <div class="feature-detail-content">
+          <div class="feature-detail-header">
+            <div class="feature-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242"/><path d="M12 12v9"/><path d="m16 16-4-4-4 4"/></svg>
+            </div>
+            <h2 class="feature-detail-title">Экспорт и импорт инстансов</h2>
+          </div>
+          <p class="feature-detail-lead">
+            Хотите поделиться собственной сборкой с другом или опубликовать свой модпак? Prism экспортирует инстанс в удобном стандартном формате.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Умный экспорт:</strong> можно экспортировать как чистый zip-модпак CurseForge/Modrinth (только манифест со ссылками), так и полный архив с конфигами.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Удаление личных данных:</strong> лаунчер автоматически очищает логины, статистику и локальные логи перед архивацией.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Импорт из любого источника:</strong> просто перетащите файл <code>.zip</code> или <code>.mrpack</code> в окно Prism, и игра будет готова за секунды.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-detail-preview">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            </div>
+            <span class="mockup-title">Экспорт: MyCustomPack.mrpack</span>
+          </div>
+          <div class="mockup-body">
+            <div style="font-size:0.82rem; color:#fff; margin-bottom:0.75rem;">
+              Включенные компоненты:
+            </div>
+            <div style="display:flex; flex-direction:column; gap:0.4rem; font-size:0.8rem; color:#8b949e;">
+              <label style="display:flex; align-items:center; gap:0.5rem;">
+                <input type="checkbox" checked disabled> Манифест модов (78 файлов)
+              </label>
+              <label style="display:flex; align-items:center; gap:0.5rem;">
+                <input type="checkbox" checked disabled> Настроенные конфиги (/config)
+              </label>
+              <label style="display:flex; align-items:center; gap:0.5rem;">
+                <input type="checkbox" checked disabled> Пользовательские шейдеры
+              </label>
+              <label style="display:flex; align-items:center; gap:0.5rem; color:#6e7681;">
+                <input type="checkbox" disabled> Локальные миры (исключены для приватности)
+              </label>
+            </div>
+            <div style="margin-top:1.25rem; text-align:right;">
+              <span style="display:inline-block; padding:0.35rem 0.75rem; background:#8b5cf6; color:#fff; border-radius:4px; font-size:0.75rem; font-weight:600;">
+                Экспортировать 1.4 MB
+              </span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Feature 6: Группировка и сортировка -->
+      <article class="feature-detail-block">
+        <div class="feature-detail-content">
+          <div class="feature-detail-header">
+            <div class="feature-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h2 class="feature-detail-title">Группировка и упорядочивание инстансов</h2>
+          </div>
+          <p class="feature-detail-lead">
+            Когда у вас накапливаются десятки сборок под разные версии и сервера, Prism позволяет организовать их в идеальный каталог.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Пользовательские группы:</strong> разделите инстансы по папкам — «Серверные», «Модпаки», «Чистая ванилла», «Снэпшоты».</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Умная сортировка:</strong> сортируйте по времени последнего запуска, общему игровому времени или названию.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Компактный режим:</strong> переключайтесь между сеткой карточек с крупными значками и удобной таблицей со сводкой параметров.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-detail-preview">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            </div>
+            <span class="mockup-title">Группы инстансов</span>
+          </div>
+          <div class="mockup-body">
+            <div style="font-size:0.85rem; color:#a78bfa; font-weight:700; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.4rem;">
+              <span>📁 Серверные сборки (2)</span>
+            </div>
+            <div style="margin-left:1rem; border-left:2px solid #30363d; padding-left:0.75rem; margin-bottom:1rem; display:flex; flex-direction:column; gap:0.4rem;">
+              <div style="font-size:0.8rem; color:#e2e8f0;">• Hypixel Bedwars (1.8.9 Vanilla)</div>
+              <div style="font-size:0.8rem; color:#e2e8f0;">• Private SMP (1.20.4 Fabric + Simple Voice)</div>
+            </div>
+
+            <div style="font-size:0.85rem; color:#38bdf8; font-weight:700; margin-bottom:0.5rem; display:flex; align-items:center; gap:0.4rem;">
+              <span>📁 Хардкорные модпаки (1)</span>
+            </div>
+            <div style="margin-left:1rem; border-left:2px solid #30363d; padding-left:0.75rem; display:flex; flex-direction:column; gap:0.4rem;">
+              <div style="font-size:0.8rem; color:#e2e8f0;">• RLCraft v2.9.3 (Forge 1.12.2)</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Feature 7: Просмотр логов и диагностика ошибок -->
+      <article class="feature-detail-block">
+        <div class="feature-detail-content">
+          <div class="feature-detail-header">
+            <div class="feature-badge-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+            </div>
+            <h2 class="feature-detail-title">Просмотр логов и быстрая диагностика ошибок</h2>
+          </div>
+          <p class="feature-detail-lead">
+            Игра вылетела с ошибкой при запуске? Больше не нужно копаться в гигантских текстовых файлах и гадать, какой мод вызвал краш.
+          </p>
+          <ul class="feature-list">
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Подсветка синтаксиса и ошибок:</strong> предупреждения выделяются желтым цветом, а критические фатальные краши — красным.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Загрузка лога на Pastebin в 1 клик:</strong> лаунчер генерирует короткую ссылку для отправки в Discord поддержки модов без раскрытия имени вашего ПК.</span>
+            </li>
+            <li class="feature-list-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Определение конфликтующих модов:</strong> встроенный парсер сразу подсказывает, какая именно библиотека не смогла загрузиться.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-detail-preview">
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            </div>
+            <span class="mockup-title">Консоль инстанса — Live Log</span>
+          </div>
+          <div class="mockup-body" style="background:#070a0f;">
+            <div style="font-size:0.75rem; font-family:var(--font-mono); line-height:1.5;">
+              <span style="color:#6e7681;">[14:20:01] [main/INFO]:</span> <span style="color:#d1d5db;">Loading Minecraft 1.20.4 with Fabric Loader</span><br>
+              <span style="color:#6e7681;">[14:20:02] [main/WARN]:</span> <span style="color:#fbbf24;">Mod 'jei' requested older version of fabric-api</span><br>
+              <span style="color:#6e7681;">[14:20:03] [main/ERROR]:</span> <span style="color:#f43f5e; font-weight:700;">Incompatible mod set found!</span><br>
+              <span style="color:#6e7681;">[14:20:03] [main/INFO]:</span> <span style="color:#38bdf8;">→ Mod 'Iris' requires 'Sodium' >= 0.5.8</span><br>
+              <span style="color:#10b981;">[Prism Diagnostician]: Нажмите «Обновить Sodium» для устранения ошибки.</span>
+            </div>
+            <div style="margin-top:1rem; border-top:1px solid #1f2937; padding-top:0.75rem; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:0.75rem; color:#8b949e;">Код завершения: 1</span>
+              <span style="font-size:0.75rem; padding:0.2rem 0.6rem; background:rgba(139,92,246,0.2); color:#a78bfa; border-radius:4px; font-weight:600;">
+                Загрузить в Paste.ee
+              </span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bottom CTA -->
+      <div class="cta-banner" style="margin-top: 4rem;">
+        <div class="cta-content">
+          <h2 class="cta-title">Хотите испытать эти функции прямо сейчас?</h2>
+          <p class="cta-desc">
+            Prism Launcher абсолютно бесплатен и доступен на всех современных операционных системах. Установка занимает меньше 2 минут.
+          </p>
+          <div class="cta-actions">
+            <a href="download.html" class="btn btn-primary btn-lg">
+              Перейти к загрузке
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+            <a href="comparison.html" class="btn btn-secondary btn-lg">
+              Посмотреть сравнение
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+              <polygon points="20,4 36,32 4,32" stroke="#a78bfa" stroke-width="3.5" fill="rgba(139, 92, 246, 0.2)"/>
+              <circle cx="20" cy="22" r="4.5" fill="#06b6d4" />
+            </svg>
+            <span>Prism Launcher Guide</span>
+          </div>
+          <p class="footer-desc">
+            Подробный справочник возможностей свободного игрового лаунчера для сообщества Minecraft.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Навигация</h5>
+          <div class="footer-links">
+            <a href="index.html">Главная</a>
+            <a href="comparison.html">Сравнение</a>
+            <a href="features.html">Возможности</a>
+            <a href="download.html">Скачать</a>
+            <a href="about.html">О проекте</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Ресурсы Prism</h5>
+          <div class="footer-links">
+            <a href="https://prismlauncher.org" target="_blank" rel="noopener">Официальный сайт</a>
+            <a href="https://github.com/PrismLauncher/PrismLauncher" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://prismlauncher.org/wiki/" target="_blank" rel="noopener">Wiki / Справка</a>
+            <a href="https://discord.gg/prismlauncher" target="_blank" rel="noopener">Discord</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Лицензия</h5>
+          <div class="footer-links">
+            <a href="https://github.com/PrismLauncher/PrismLauncher/blob/develop/COPYING.md" target="_blank" rel="noopener">GPL v3.0</a>
+            <a href="about.html">Дисклеймер</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Prism Launcher Info & Comparison. Свободная документация.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

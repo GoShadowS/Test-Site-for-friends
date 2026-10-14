@@ -1,385 +1,312 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DemoVerse — сайт, где есть всё</title>
-  <meta name="description" content="Многостраничная песочница: игры, квизы, инструменты, галерея, блог, формы, медиа и достижения — всё на чистом HTML, CSS и JavaScript.">
-  <meta property="og:title" content="DemoVerse — сайт, где есть всё">
-  <meta property="og:description" content="16 страниц демо: игры, инструменты, галерея, блог, квиз и достижения. Без фреймворков!">
+  <title>Prism Launcher vs Minecraft Launcher — Преимущества и возможности</title>
+  <meta name="description" content="Узнайте, почему Prism Launcher превосходит официальный Minecraft Launcher: изоляция инстансов, встроенный поиск модов и модпаков, поддержка нескольких аккаунтов и открытый исходный код.">
+  <meta name="keywords" content="Prism Launcher, Minecraft Launcher, сравнение, моды Minecraft, CurseForge, Modrinth, Fabric, Forge, NeoForge">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prism Launcher — Лучшая замена официальному Minecraft Launcher">
+  <meta property="og:description" content="Открытый, быстрый и мощный лаунчер для Minecraft с полной изоляцией сборок и встроенным менеджером модов.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="img/hero.jpg">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="img/icon-512.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#0a0e1a">
-  <link rel="stylesheet" href="css/style.css">
+  <meta property="og:url" content="https://prismlauncher.org/">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="preloader"><div class="loader-orbit"></div></div>
-  <div id="scrollProgress"></div>
 
+  <!-- Site Header -->
   <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="index.html" id="brandLogo">
-        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#06b6d4"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#lg)"/><path d="M10 8h6a8 8 0 0 1 0 16h-6V8zm4 3.6v8.8h2a4.4 4.4 0 0 0 0-8.8h-2z" fill="#fff"/></svg>
-        DemoVerse <span class="badge badge-primary">тест</span>
+    <div class="container header-container">
+      <a href="index.html" class="brand-link">
+        <svg class="brand-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="20,4 36,32 4,32" stroke="url(#prismGrad)" stroke-width="3.5" fill="rgba(139, 92, 246, 0.2)"/>
+          <circle cx="20" cy="22" r="4.5" fill="#06b6d4" />
+          <defs>
+            <linearGradient id="prismGrad" x1="4" y1="4" x2="36" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#a78bfa"/>
+              <stop offset="0.5" stop-color="#3b82f6"/>
+              <stop offset="1" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">Prism Launcher</span>
+          <span class="brand-subtitle">Community Edition</span>
+        </div>
       </a>
-      <nav class="nav" id="nav">
-        <a href="index.html">🏠 Главная</a>
-        <div class="dropdown">
-          <button class="dropbtn">🎮 Интерактив ▾</button>
-          <div class="dropdown-menu">
-            <a href="games.html">🎮 Игры</a>
-            <a href="quiz.html">❓ Квиз</a>
-            <a href="media.html">🎨 Медиа и звук</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">🧰 Инструменты ▾</button>
-          <div class="dropdown-menu">
-            <a href="apps.html">🧰 Приложения</a>
-            <a href="forms.html">📝 Формы</a>
-            <a href="tables.html">📊 Таблицы</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">📚 Контент ▾</button>
-          <div class="dropdown-menu">
-            <a href="gallery.html">🖼️ Галерея</a>
-            <a href="blog.html">📰 Блог</a>
-            <a href="components.html">🧩 UI-кит</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">ℹ️ Инфо ▾</button>
-          <div class="dropdown-menu">
-            <a href="about.html">👀 О сайте</a>
-            <a href="faq.html">❔ FAQ</a>
-            <a href="contact.html">✉️ Контакты</a>
-          </div>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link active">Главная</a></li>
+          <li><a href="comparison.html" class="nav-link">Сравнение</a></li>
+          <li><a href="features.html" class="nav-link">Возможности</a></li>
+          <li><a href="download.html" class="nav-link">Скачать</a></li>
+          <li><a href="about.html" class="nav-link">О проекте</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="download.html" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Скачать
+          </a>
         </div>
       </nav>
-      <div class="nav-actions">
-        <button class="icon-btn" id="themeToggle" title="Переключить тему (темная/светлая)">🌙</button>
-        <button class="icon-btn burger" id="burger" aria-label="Открыть меню">☰</button>
-      </div>
     </div>
   </header>
 
+  <!-- Hero Section -->
   <main>
-    <!-- HERO -->
-    <section class="hero center">
-      <canvas id="particles"></canvas>
-      <div class="container">
-        <div class="badge badge-info mb-16 anim-pulse">🚀 16 страниц · 5 игр · 15 достижений · 0 зависимостей</div>
-        <h1>Добро пожаловать в <span class="grad-text">DemoVerse</span></h1>
-        <p class="sub"><span id="typeText"></span><span class="type-cursor"></span></p>
-        <div class="cta">
-          <a href="#features" class="btn btn-primary btn-lg">✨ Смотреть возможности</a>
-          <a href="games.html" class="btn btn-secondary btn-lg">🎮 Играть</a>
-          <a href="quiz.html" class="btn btn-ghost btn-lg">❓ Пройти квиз</a>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <div class="hero-badge-wrap">
+          <span class="badge badge-prism">
+            ✨ Свободный и открытый лаунчер Minecraft
+          </span>
         </div>
-        <div class="grid grid-4 mt-34">
-          <div class="stat-box"><div class="num" data-to="16">0</div><div class="lbl">страниц сайта</div></div>
-          <div class="stat-box"><div class="num" data-to="40">0</div><div class="lbl">интерактивных демо</div></div>
-          <div class="stat-box"><div class="num" data-to="5">0</div><div class="lbl">игр</div></div>
-          <div class="stat-box"><div class="num" data-to="0">0</div><div class="lbl">внешних библиотек</div></div>
+        <h1 class="hero-title">
+          Играйте в Minecraft с <span class="gradient-text">настоящей свободой</span> и полным контролем
+        </h1>
+        <p class="hero-subtitle">
+          Prism Launcher — это легковесный, высокопроизводительный лаунчер с открытым исходным кодом. Управляйте сотнями сборок с модами, скачивайте модпаки в один клик и забудьте об ограничениях официального лаунчера.
+        </p>
+        <div class="hero-actions">
+          <a href="comparison.html" class="btn btn-primary btn-lg">
+            Узнать подробнее о сравнении
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="download.html" class="btn btn-secondary btn-lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Скачать Prism
+          </a>
         </div>
-      </div>
-    </section>
 
-    <!-- ТИКЕР -->
-    <div class="ticker-wrap">
-      <div class="ticker">
-        <span>🔥 <b>Новинка:</b>&nbsp;система достижений — соберите все 15!</span>
-        <span>🐍 Играйте в Змейку прямо на странице <b>«Игры»</b></span>
-        <span>🌗 Переключайте светлую и тёмную тему — настройка сохраняется</span>
-        <span>🎹 На странице «Медиа» есть настоящее пианино на Web Audio API</span>
-        <span>🕹️ Введите код Konami где угодно... если знаете его 😉</span>
-        <span>📄 Сайт работает офлайн благодаря Service Worker</span>
-        <span>🔥 <b>Новинка:</b>&nbsp;система достижений — соберите все 15!</span>
-        <span>🐍 Играйте в Змейку прямо на странице <b>«Игры»</b></span>
-        <span>🌗 Переключайте светлую и тёмную тему — настройка сохраняется</span>
-        <span>🎹 На странице «Медиа» есть настоящее пианино на Web Audio API</span>
-        <span>🕹️ Введите код Konami где угодно... если знаете его 😉</span>
-        <span>📄 Сайт работает офлайн благодаря Service Worker</span>
-      </div>
-    </div>
-
-    <!-- ВОЗМОЖНОСТИ -->
-    <section class="section" id="features">
-      <div class="container">
-        <h2 class="section-title reveal">Всё, что тут есть <span class="grad-text">вас ждёт</span></h2>
-        <p class="section-sub reveal">Каждая страница — отдельная демонстрация возможностей современного браузера без единой внешней библиотеки.</p>
-        <div class="grid grid-3">
-          <a class="card card-topline reveal hover-shine" href="games.html"><span class="icon-lg">🎮</span><h3>Аркада</h3><p>Змейка, 2048, крестики-нолики, «Память» и «Угадай число» — с рекордами в localStorage.</p><span class="card-link">Играть →</span></a>
-          <a class="card card-topline reveal hover-shine" href="apps.html"><span class="icon-lg">🧰</span><h3>Инструменты</h3><p>Калькулятор, задачи, заметки, таймер, конвертеры, генератор паролей и анализ текста.</p><span class="card-link">Открыть →</span></a>
-          <a class="card card-topline reveal hover-shine" href="gallery.html"><span class="icon-lg">🖼️</span><h3>Галерея</h3><p>Фильтры по категориям, лайтбокс с клавиатурной навигацией и красивые сгенерированные фото.</p><span class="card-link">Смотреть →</span></a>
-          <a class="card card-topline reveal hover-shine" href="quiz.html"><span class="icon-lg">❓</span><h3>Квиз</h3><p>12 вопросов с пояснениями, прогресс-бар, оценка результата и личный рекорд.</p><span class="card-link">Проверить себя →</span></a>
-          <a class="card card-topline reveal hover-shine" href="components.html"><span class="icon-lg">🧩</span><h3>UI-кит</h3><p>Кнопки, модалки, табы, аккордеоны, тултипы, карусель, тосты и ещё два десятка компонентов.</p><span class="card-link">Изучить →</span></a>
-          <a class="card card-topline reveal hover-shine" href="forms.html"><span class="icon-lg">📝</span><h3>Формы</h3><p>Валидация в реальном времени, маска телефона, сила пароля, drag-n-drop загрузка файлов.</p><span class="card-link">Заполнить →</span></a>
-          <a class="card card-topline reveal hover-shine" href="tables.html"><span class="icon-lg">📊</span><h3>Таблицы</h3><p>Сортировка, поиск, фильтры, пагинация и экспорт в CSV на живых данных.</p><span class="card-link">Посмотреть →</span></a>
-          <a class="card card-topline reveal hover-shine" href="media.html"><span class="icon-lg">🎨</span><h3>Медиа и звук</h3><p>Пианино, драм-машина, визуализация звука и canvas-демо: фракталы, частицы, «Жизнь».</p><span class="card-link">Послушать →</span></a>
-          <a class="card card-topline reveal hover-shine" href="blog.html"><span class="icon-lg">📰</span><h3>Блог</h3><p>Три полноценные статьи про GitHub Pages, CSS и JavaScript с оглавлением и кодом.</p><span class="card-link">Читать →</span></a>
-          <a class="card card-topline reveal hover-shine" href="faq.html"><span class="icon-lg">❔</span><h3>FAQ</h3><p>Аккордеон с ответами на частые вопросы — про сайт, хостинг и браузерные возможности.</p><span class="card-link">Спросить →</span></a>
-          <a class="card card-topline reveal hover-shine" href="about.html"><span class="icon-lg">👀</span><h3>О сайте</h3><p>Как и из чего собрана эта песочница: стек, таймлайн создания и «команда» проекта.</p><span class="card-link">Узнать →</span></a>
-          <a class="card card-topline reveal hover-shine" href="contact.html"><span class="icon-lg">✉️</span><h3>Контакты</h3><p>Форма связи, карта, соцсети и кнопка «скопировать почту» — всё как у взрослых.</p><span class="card-link">Написать →</span></a>
+        <!-- Quick Stats -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value prism-color">100%</span>
+            <span class="stat-label">Открытый код (GPL-3.0)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">0 МБ</span>
+            <span class="stat-label">Встроенной телеметрии</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">4+</span>
+            <span class="stat-label">Платформы модпаков</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">5x</span>
+            <span class="stat-label">Быстрее запуск UI (C++/Qt)</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ЖИВЫЕ ВИДЖЕТЫ -->
+    <!-- Key Advantages Grid -->
     <section class="section section-alt">
       <div class="container">
-        <h2 class="section-title reveal">Живые <span class="grad-text">виджеты</span></h2>
-        <p class="section-sub reveal">Мелкие интерактивные игрушки прямо на главной странице.</p>
-        <div class="grid grid-2">
-          <div class="card reveal">
-            <h3>🎉 До Нового года</h3>
-            <p class="mb-16">Обратный отсчёт работает в любой день года — до ближайшего 1 января.</p>
-            <div class="grid grid-4" id="nyCountdown">
-              <div class="stat-box"><div class="num" id="nyD">—</div><div class="lbl">дней</div></div>
-              <div class="stat-box"><div class="num" id="nyH">—</div><div class="lbl">часов</div></div>
-              <div class="stat-box"><div class="num" id="nyM">—</div><div class="lbl">минут</div></div>
-              <div class="stat-box"><div class="num" id="nyS">—</div><div class="lbl">секунд</div></div>
+        <div class="section-header">
+          <span class="section-tag">Преимущества</span>
+          <h2 class="section-title">Почему тысячи игроков выбирают Prism?</h2>
+          <p class="section-desc">
+            Официальный лаунчер хорош для чистого Minecraft, но для модов и удобства Prism Launcher опережает его по всем фронтам.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <div class="feature-card">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3>Изолированные инстансы</h3>
+            <p>
+              Каждая версия, модпак или серверная сборка живут в своей папке. Моды, миры, конфиги и ресурспаки никогда не перемешаются и не сломают друг друга.
+            </p>
+            <div class="card-tags">
+              <span class="mini-tag">Полная изоляция</span>
+              <span class="mini-tag">Своя папка .minecraft</span>
             </div>
           </div>
-          <div class="card reveal">
-            <h3>🎲 Кубики</h3>
-            <p class="mb-16">Бросьте пару шестигранных костей — честный <code>Math.random()</code>.</p>
-            <div style="font-size:3.4rem; letter-spacing:8px" id="diceFace">🎲🎲</div>
-            <button class="btn btn-primary mt-16" id="diceBtn">Бросить!</button>
-            <p class="help-text mt-16" id="diceLog">Сумма: —</p>
+
+          <!-- Card 2 -->
+          <div class="feature-card">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+            </div>
+            <h3>Встроенный каталог модов</h3>
+            <p>
+              Ищите, устанавливайте и обновляйте моды с CurseForge и Modrinth прямо в интерфейсе лаунчера. Никаких ручных скачиваний .jar файлов из браузера.
+            </p>
+            <div class="card-tags">
+              <span class="mini-tag">CurseForge</span>
+              <span class="mini-tag">Modrinth</span>
+              <span class="mini-tag">Автопроверка зависимостей</span>
+            </div>
           </div>
-          <div class="card reveal">
-            <h3>💡 Случайный факт</h3>
-            <p id="factText" style="min-height:66px">Нажмите кнопку — и узнаете что-то новое.</p>
-            <button class="btn btn-secondary mt-16" id="factBtn">Ещё факт 🔁</button>
+
+          <!-- Card 3 -->
+          <div class="feature-card">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Мульти-аккаунты</h3>
+            <p>
+              Переключайтесь между Microsoft-аккаунтами и локальными оффлайн-профилями за секунду без постоянного ввода паролей и ожидания повторного логина.
+            </p>
+            <div class="card-tags">
+              <span class="mini-tag">Microsoft OAuth</span>
+              <span class="mini-tag">Оффлайн профили</span>
+              <span class="mini-tag">Быстрая смена</span>
+            </div>
           </div>
-          <div class="card reveal">
-            <h3>🎨 Цвет настроения</h3>
-            <p class="mb-16">Генератор случайного градиента — можно скопировать CSS-код одним кликом.</p>
-            <div id="moodPreview" style="height:86px; border-radius:12px; border:1px solid var(--border); margin-bottom:12px"></div>
-            <div class="flex gap-8">
-              <button class="btn btn-primary" id="moodBtn">Сгенерировать</button>
-              <button class="btn btn-secondary" data-copy id="moodCopy">Копировать CSS</button>
+
+          <!-- Card 4 -->
+          <div class="feature-card">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <h3>Точечная настройка Java</h3>
+            <p>
+              Назначайте разным сборкам разные версии Java (Java 8, 17, 21), выделяйте нужное количество ОЗУ и передавайте специфические GC-флаги оптимизации.
+            </p>
+            <div class="card-tags">
+              <span class="mini-tag">Java 8 / 17 / 21</span>
+              <span class="mini-tag">Aikar Flags</span>
+              <span class="mini-tag">Управление RAM</span>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="feature-card">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3>Быстрый C++ и Qt интерфейс</h3>
+            <p>
+              Prism не использует медленный Electron или тяжелые веб-оболочки. Лаунчер написан на нативном C++ с Qt, запускаясь за доли секунды и потребляя минимум ресурсов.
+            </p>
+            <div class="card-tags">
+              <span class="mini-tag">Native C++</span>
+              <span class="mini-tag">~30 МБ памяти</span>
+              <span class="mini-tag">Мгновенный отклик</span>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="feature-card">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Приватность и Open Source</h3>
+            <p>
+              Полностью прозрачный код без скрытой слежки, рекламы и привязки к магазинам Microsoft Store. Ваши данные и конфигурации остаются только на вашем ПК.
+            </p>
+            <div class="card-tags">
+              <span class="mini-tag">GPL v3</span>
+              <span class="mini-tag">Без рекламы</span>
+              <span class="mini-tag">GitHub комьюнити</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- СТЕК -->
+    <!-- Call to action banner -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title reveal">Из чего сделан <span class="grad-text">сайт</span></h2>
-        <p class="section-sub reveal">Никаких сборщиков и фреймворков — только ванильные веб-технологии. Файлы открываются и работают где угодно, включая GitHub Pages.</p>
-        <div class="grid grid-auto">
-          <div class="card reveal"><h3>HTML5</h3><div class="progress progress-striped mt-16"><div style="width:100%"></div></div><p class="mt-8">Семантическая разметка, 16 страниц</p></div>
-          <div class="card reveal"><h3>CSS3</h3><div class="progress progress-striped mt-16"><div style="width:95%"></div></div><p class="mt-8">Переменные, grid, анимации, темы</p></div>
-          <div class="card reveal"><h3>JavaScript</h3><div class="progress progress-striped mt-16"><div style="width:90%"></div></div><p class="mt-8">ES-модули духа: canvas, Web Audio, Storage</p></div>
-          <div class="card reveal"><h3>PWA</h3><div class="progress progress-striped mt-16"><div style="width:80%"></div></div><p class="mt-8">Манифест + Service Worker = офлайн-режим</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section section-alt center">
-      <div class="container reveal">
-        <h2 class="section-title">Готовы исследовать? <span class="grad-text">Поехали!</span></h2>
-        <p class="section-sub" style="margin-inline:auto">Начните с любой страницы — или попробуйте найти все пасхалки.</p>
-        <div class="cta">
-          <a href="games.html" class="btn btn-primary btn-lg">🎮 В аркаду</a>
-          <a href="components.html" class="btn btn-lg btn-neon">🧩 UI-кит</a>
-          <a href="https://github.com/GoShadowS/Test-Site-for-friends" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">💻 Исходники на GitHub</a>
+        <div class="cta-banner">
+          <div class="cta-content">
+            <h2 class="cta-title">Готовы увидеть полное сравнение характеристик?</h2>
+            <p class="cta-desc">
+              Мы составили наглядную таблицу параметров Prism Launcher против официального Minecraft Launcher по 9 главным критериям.
+            </p>
+            <div class="cta-actions">
+              <a href="comparison.html" class="btn btn-primary btn-lg">
+                Перейти к таблице сравнения
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="features.html" class="btn btn-secondary btn-lg">
+                Все функции в деталях
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>🚀 DemoVerse</h4>
-          <p style="font-size:.9rem" class="muted">Многостраничная песочница, созданная агентом Arena.ai для демонстрации того, что умеет чистый HTML + CSS + JavaScript. Хостится на GitHub Pages.</p>
-          <button class="btn btn-sm btn-secondary mt-16" id="achvBtn">🏆 Достижения: <span id="achvCount">0/15</span></button>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+              <polygon points="20,4 36,32 4,32" stroke="#a78bfa" stroke-width="3.5" fill="rgba(139, 92, 246, 0.2)"/>
+              <circle cx="20" cy="22" r="4.5" fill="#06b6d4" />
+            </svg>
+            <span>Prism Launcher Guide</span>
+          </div>
+          <p class="footer-desc">
+            Информационный ресурс о преимуществах лучшего открытого лаунчера для Minecraft. Не является официальным сайтом Mojang или Prism Launcher.
+          </p>
         </div>
-        <div>
-          <h4>Интерактив</h4>
-          <ul>
-            <li><a href="games.html">🎮 Игры</a></li>
-            <li><a href="quiz.html">❓ Квиз</a></li>
-            <li><a href="media.html">🎨 Медиа и звук</a></li>
-          </ul>
+
+        <div class="footer-col">
+          <h5>Навигация</h5>
+          <div class="footer-links">
+            <a href="index.html">Главная</a>
+            <a href="comparison.html">Сравнение</a>
+            <a href="features.html">Возможности</a>
+            <a href="download.html">Скачать</a>
+            <a href="about.html">О проекте</a>
+          </div>
         </div>
-        <div>
-          <h4>Инструменты</h4>
-          <ul>
-            <li><a href="apps.html">🧰 Приложения</a></li>
-            <li><a href="forms.html">📝 Формы</a></li>
-            <li><a href="tables.html">📊 Таблицы</a></li>
-            <li><a href="components.html">🧩 UI-кит</a></li>
-          </ul>
+
+        <div class="footer-col">
+          <h5>Ресурсы Prism</h5>
+          <div class="footer-links">
+            <a href="https://prismlauncher.org" target="_blank" rel="noopener">Официальный сайт</a>
+            <a href="https://github.com/PrismLauncher/PrismLauncher" target="_blank" rel="noopener">Репозиторий GitHub</a>
+            <a href="https://prismlauncher.org/wiki/" target="_blank" rel="noopener">Документация / Wiki</a>
+            <a href="https://discord.gg/prismlauncher" target="_blank" rel="noopener">Discord сервер</a>
+          </div>
         </div>
-        <div>
-          <h4>Инфо</h4>
-          <ul>
-            <li><a href="about.html">👀 О сайте</a></li>
-            <li><a href="blog.html">📰 Блог</a></li>
-            <li><a href="gallery.html">🖼️ Галерея</a></li>
-            <li><a href="faq.html">❔ FAQ</a></li>
-            <li><a href="contact.html">✉️ Контакты</a></li>
-          </ul>
+
+        <div class="footer-col">
+          <h5>Платформы модов</h5>
+          <div class="footer-links">
+            <a href="https://modrinth.com" target="_blank" rel="noopener">Modrinth</a>
+            <a href="https://curseforge.com/minecraft" target="_blank" rel="noopener">CurseForge</a>
+            <a href="https://fabricmc.net" target="_blank" rel="noopener">Fabric MC</a>
+            <a href="https://neoforged.net" target="_blank" rel="noopener">NeoForged</a>
+          </div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <span>© <span id="year"></span> DemoVerse · сделано 💜 агентом <a href="https://arena.ai" target="_blank" rel="noopener">Arena.ai</a></span>
-        <span class="mono">🕒 <span id="clock"></span></span>
-        <span>Визитов на этом устройстве: <b id="visits">1</b></span>
+        <p>© 2026 Prism Launcher Info & Comparison. Свободная документация.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html">Дисклеймер</a>
+          <a href="https://github.com/PrismLauncher/PrismLauncher/blob/develop/COPYING.md" target="_blank" rel="noopener">Лицензия GPL-3.0</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <button id="backTop" title="Наверх">↑</button>
-  <div id="cookieBanner">
-    <span style="flex:1; min-width:220px">🍪 Мы храним настройки (тема, рекорды, достижения) в localStorage вашего браузера. Никаких серверов и трекеров.</span>
-    <button class="btn btn-primary btn-sm" id="cookieOk">Понятно!</button>
-  </div>
-
-  <script src="js/main.js" defer></script>
-  <script defer>
-    /* ---- частицы в hero ---- */
-    (function () {
-      const cv = document.getElementById("particles");
-      if (!cv) return;
-      const ctx = cv.getContext("2d");
-      let W, H, pts = [];
-      function resize() {
-        W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight;
-        pts = Array.from({ length: Math.min(70, W / 16) }, () => ({
-          x: Math.random() * W, y: Math.random() * H,
-          vx: (Math.random() - .5) * .5, vy: (Math.random() - .5) * .5,
-          r: Math.random() * 2 + .6
-        }));
-      }
-      resize(); addEventListener("resize", resize);
-      (function loop() {
-        ctx.clearRect(0, 0, W, H);
-        const light = document.documentElement.dataset.theme === "light";
-        for (const p of pts) {
-          p.x += p.vx; p.y += p.vy;
-          if (p.x < 0 || p.x > W) p.vx *= -1;
-          if (p.y < 0 || p.y > H) p.vy *= -1;
-          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 7);
-          ctx.fillStyle = light ? "rgba(124,58,237,.5)" : "rgba(125,211,252,.75)"; ctx.fill();
-        }
-        for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
-          const a = pts[i], b = pts[j], d = Math.hypot(a.x - b.x, a.y - b.y);
-          if (d < 110) {
-            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(124,58,237,${(1 - d / 110) * .35})`; ctx.stroke();
-          }
-        }
-        requestAnimationFrame(loop);
-      })();
-    })();
-
-    /* ---- печатающийся текст ---- */
-    (function () {
-      const el = document.getElementById("typeText");
-      if (!el) return;
-      const phrases = [
-        "Это многостраничный сайт-песочница со всем, что только возможно…",
-        "Игры, квизы, инструменты, галерея, блог и медиа — на чистом JS.",
-        "Переключите тему, найдите пасхалки, соберите все достижения!",
-        "Работает офлайн, ставится на домашний экран, ничего не весит."
-      ];
-      let pi = 0, ci = 0, del = false;
-      (function type() {
-        const cur = phrases[pi];
-        el.textContent = cur.slice(0, ci);
-        if (!del && ci < cur.length) { ci++; setTimeout(type, 34); }
-        else if (!del) { del = true; setTimeout(type, 2100); }
-        else if (ci > 0) { ci--; setTimeout(type, 14); }
-        else { del = false; pi = (pi + 1) % phrases.length; setTimeout(type, 320); }
-      })();
-    })();
-
-    /* ---- до Нового года ---- */
-    (function () {
-      const d = document.getElementById("nyD"); if (!d) return;
-      const pad = n => String(n).padStart(2, "0");
-      setInterval(() => {
-        const now = new Date();
-        let ny = new Date(now.getFullYear() + 1, 0, 1);
-        if (now.getMonth() === 0 && now.getDate() === 1) ny = new Date(now.getFullYear(), 0, 1);
-        const diff = Math.max(0, ny - now);
-        document.getElementById("nyD").textContent = Math.floor(diff / 864e5);
-        document.getElementById("nyH").textContent = pad(Math.floor(diff / 36e5) % 24);
-        document.getElementById("nyM").textContent = pad(Math.floor(diff / 6e4) % 60);
-        document.getElementById("nyS").textContent = pad(Math.floor(diff / 1e3) % 60);
-      }, 1000);
-    })();
-
-    /* ---- кубики ---- */
-    (function () {
-      const btn = document.getElementById("diceBtn"); if (!btn) return;
-      const faces = ["⚀","⚁","⚂","⚃","⚄","⚅"];
-      btn.addEventListener("click", () => {
-        const face = document.getElementById("diceFace"), log = document.getElementById("diceLog");
-        let n = 0;
-        const iv = setInterval(() => {
-          face.textContent = faces[Math.floor(Math.random() * 6)] + faces[Math.floor(Math.random() * 6)];
-          if (++n > 9) {
-            clearInterval(iv);
-            const a = 1 + Math.floor(Math.random() * 6), b = 1 + Math.floor(Math.random() * 6);
-            face.textContent = faces[a - 1] + faces[b - 1];
-            log.textContent = `Сумма: ${a + b}` + (a === b ? " · Дубль! 🎉" : "");
-          }
-        }, 70);
-      });
-    })();
-
-    /* ---- факты ---- */
-    (function () {
-      const btn = document.getElementById("factBtn"); if (!btn) return;
-      const facts = [
-        "Первый в истории баг был настоящим: мотылёк, застрявший в реле компьютера Harvard Mark II в 1947 году.",
-        "JavaScript был создан Бренданом Айком всего за 10 дней в мае 1995 года.",
-        "Название языка Python — не в честь змеи, а в честь шоу «Летающий цирк Монти Пайтона».",
-        "Первое сообщение в интернете было словом «LO» — система упала на «LOGIN».",
-        "GitHub Pages появился в 2008 году и с тех пор hosts миллионы статических сайтов.",
-        "Символ @ в разных языках называют «собачкой», «улиткой», «обезьяньим хвостом» и даже «селёдкой».",
-        "В первом компьютерном мышке вместо шарика были два колеса.",
-        "Тёмная тема экономит заряд OLED-экранов — тёмные пиксели почти не светятся.",
-        "CSS-переменные (custom properties) поддерживаются всеми браузерами с 2017 года.",
-        "Service Worker — это отдельный поток JS, который может перехватывать сетевые запросы."
-      ];
-      let idx = -1;
-      btn.addEventListener("click", () => {
-        let next; do { next = Math.floor(Math.random() * facts.length); } while (next === idx);
-        idx = next;
-        const el = document.getElementById("factText");
-        el.style.opacity = 0;
-        setTimeout(() => { el.textContent = "💡 " + facts[idx]; el.style.transition = "opacity .3s"; el.style.opacity = 1; }, 200);
-      });
-    })();
-
-    /* ---- цвет настроения ---- */
-    (function () {
-      const btn = document.getElementById("moodBtn"); if (!btn) return;
-      const rnd = () => Math.floor(Math.random() * 360);
-      function gen() {
-        const css = `linear-gradient(135deg, hsl(${rnd()} 80% 55%), hsl(${rnd()} 80% 55%))`;
-        document.getElementById("moodPreview").style.background = css;
-        document.getElementById("moodCopy").dataset.copy = `background: ${css};`;
-        toast("Новый градиент сгенерирован 🎨", "info", 1600);
-      }
-      btn.addEventListener("click", gen);
-      gen();
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

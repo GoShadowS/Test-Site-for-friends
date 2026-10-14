@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сравнение: Prism Launcher vs Minecraft Launcher — Подробная таблица</title>
+  <meta name="description" content="Детальное попарное сравнение Prism Launcher и официального Minecraft Launcher: управление инстансами, моды, загрузчики, Java, кроссплатформенность и производительность.">
+  <meta name="keywords" content="сравнение Minecraft Launcher, Prism Launcher vs Minecraft Launcher, моды Minecraft, CurseForge, Modrinth, Forge, Fabric, NeoForge">
+  
+  <meta property="og:title" content="Prism Launcher vs Официальный Minecraft Launcher — Битва лаунчеров">
+  <meta property="og:description" content="Честное и наглядное сравнение по 9 ключевым характеристикам: от модов до изоляции сборок.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://prismlauncher.org/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-link">
+        <svg class="brand-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="20,4 36,32 4,32" stroke="url(#prismGrad)" stroke-width="3.5" fill="rgba(139, 92, 246, 0.2)"/>
+          <circle cx="20" cy="22" r="4.5" fill="#06b6d4" />
+          <defs>
+            <linearGradient id="prismGrad" x1="4" y1="4" x2="36" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#a78bfa"/>
+              <stop offset="0.5" stop-color="#3b82f6"/>
+              <stop offset="1" stop-color="#06b6d4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">Prism Launcher</span>
+          <span class="brand-subtitle">Community Edition</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Главная</a></li>
+          <li><a href="comparison.html" class="nav-link active">Сравнение</a></li>
+          <li><a href="features.html" class="nav-link">Возможности</a></li>
+          <li><a href="download.html" class="nav-link">Скачать</a></li>
+          <li><a href="about.html" class="nav-link">О проекте</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="download.html" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Скачать
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Comparison Section -->
+  <main class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Битва возможностей</span>
+        <h1 class="section-title">Prism Launcher против Minecraft Launcher</h1>
+        <p class="section-desc">
+          Детальный разбор различий между фаворитом моддерского сообщества и стандартным приложением от Mojang/Microsoft по девяти ключевым параметрам.
+        </p>
+      </div>
+
+      <!-- Main Comparison Table -->
+      <div class="comparison-container">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th class="col-criterion">Критерий оценки</th>
+              <th class="col-prism">
+                <div style="display:flex; align-items:center; gap:0.5rem;">
+                  <span>Prism Launcher</span>
+                  <span class="badge badge-prism">Рекомендуется</span>
+                </div>
+              </th>
+              <th class="col-official">Официальный Minecraft Launcher</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 1. Управление аккаунтами -->
+            <tr>
+              <td>
+                <span class="criterion-title">1. Несколько аккаунтов</span>
+                <span class="criterion-desc">Удобство переключения и поддержка разных типов авторизации</span>
+              </td>
+              <td class="col-prism">
+                <div class="cell-content positive">
+                  <svg class="cell-icon icon-yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>Мгновенное переключение в 1 клик.</strong> Неограниченное количество аккаунтов Microsoft, сохранение сессий без повторных входов и поддержка оффлайн-профилей.
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="cell-content negative">
+                  <svg class="cell-icon icon-partial" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <div>
+                    <strong>Неудобно и медленно.</strong> Требуется переавторизация через аккаунты Microsoft/Xbox, периодические сбои синхронизации и зависания.
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 2. Поддержка модов & загрузчиков -->
+            <tr>
+              <td>
+                <span class="criterion-title">2. Поддержка модов</span>
+                <span class="criterion-desc">Forge, Fabric, Quilt, NeoForge, LiteLoader</span>
+              </td>
+              <td class="col-prism">
+                <div class="cell-content positive">
+                  <svg class="cell-icon icon-yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>Нативная установка любых загрузчиков.</strong> Кликните «Установить Fabric/Forge/NeoForge/Quilt», выберите версию и лаунчер скачает всё сам. Обновление в один клик.
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="cell-content negative">
+                  <svg class="cell-icon icon-no" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  <div>
+                    <strong>Только ручная установка.</strong> Нужно скачивать .jar/.exe инсталлятор Forge/Fabric из интернета, запускать вручную и искать сгенерированный профиль.
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 3. Создание и изоляция инстансов -->
+            <tr>
+              <td>
+                <span class="criterion-title">3. Изоляция инстансов</span>
+                <span class="criterion-desc">Разделение миров, модов, конфигов и скриншотов</span>
+              </td>
+              <td class="col-prism">
+                <div class="cell-content positive">
+                  <svg class="cell-icon icon-yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>100% изолированные папки.</strong> Каждый инстанс имеет свой каталог: свои моды, миры, опции управления и скриншоты. Никаких конфликтов между версиями 1.12.2 и 1.20.4.
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="cell-content negative">
+                  <svg class="cell-icon icon-partial" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <div>
+                    <strong>Смешанная папка по умолчанию.</strong> Все профили складываются в одну папку <code>.minecraft</code>. Для разделения нужно вручную прописывать «Game Directory» в настройках.
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 4. Встроенная установка модпаков -->
+            <tr>
+              <td>
+                <span class="criterion-title">4. Установка модпаков</span>
+                <span class="criterion-desc">CurseForge, Modrinth, FTB, ATLauncher, Technic</span>
+              </td>
+              <td class="col-prism">
+                <div class="cell-content positive">
+                  <svg class="cell-icon icon-yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>Прямой поиск и загрузка со всех платформ.</strong> Доступны Modrinth, CurseForge, FTB, Technic и архивные zip-модпаки прямо из меню «Создать инстанс».
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="cell-content negative">
+                  <svg class="cell-icon icon-no" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  <div>
+                    <strong>Отсутствует.</strong> Официальный лаунчер вообще не умеет работать с модпаками. Требуются сторонние программы вроде CurseForge App.
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 5. Настройки Java и памяти -->
+            <tr>
+              <td>
+                <span class="criterion-title">5. Кастомизация Java</span>
+                <span class="criterion-desc">Выбор версий Java (8/17/21), RAM и оптимизационные флаги</span>
+              </td>
+              <td class="col-prism">
+                <div class="cell-content positive">
+                  <svg class="cell-icon icon-yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>Автоопределение и переопределение на инстанс.</strong> Автосканирование установленных Java Runtime, встроенные пресеты флагов сборщика мусора (Aikar Flags, ZGC, Shenandoah).
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="cell-content negative">
+                  <svg class="cell-icon icon-partial" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <div>
+                    <strong>Примитивное поле аргументов.</strong> Только встроенная Java от Mojang, сложно настраивать старые версии (требующие Java 8), нет помощи по флагам оптимизации.
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 6. Открытый код и конфиденциальность -->
+            <tr>
+              <td>
+                <span class="criterion-title">6. Открытый код и приватность</span>
+                <span class="criterion-desc">Лицензирование, сбор телеметрии и независимость</span>
+              </td>
+              <td class="col-prism">
+                <div class="cell-content positive">
+                  <svg class="cell-icon icon-yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>GPL v3, 0% телеметрии.</strong> Исходный код открыт на GitHub, развивается сотнями энтузиастов, не привязан к сервисам сбора аналитики и рекламе.
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="cell-content negative">
+                  <svg class="cell-icon icon-no" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  <div>
+                    <strong>Проприетарный софт Microsoft.</strong> Собирает диагностические данные, содержит рекламные баннеры других игр (Minecraft Dungeons, Legends) и привязан к MS Store.
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 7. Кроссплатформенность -->
+            <tr>
+              <td>
+                <span class="criterion-title">7. Кроссплатформенность</span>
+                <span class="criterion-desc">Поддержка различных ОС и менеджеров пакетов</span>
+              </td>
+              <td class="col-prism">
+                <div class="cell-content positive">
+                  <svg class="cell-icon icon-yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>Windows, macOS (Intel & Apple Silicon), Linux</strong> (Flatpak, AppImage, AUR, deb/rpm, Steam Deck / SteamOS с готовой оптимизацией контроллеров).
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="cell-content negative">
+                  <svg class="cell-icon icon-partial" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <div>
+                    <strong>Ограниченная поддержка Linux.</strong> Проблемы с интеграцией в Flatpak, частые ошибки совместимости с новыми дистрибутивами и зависимостями libssl/gnome-keyring.
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 8. Оффлайн-режим и альтернативы -->
+            <tr>
+              <td>
+                <span class="criterion-title">8. Оффлайн-аккаунты</span>
+                <span class="criterion-desc">Игра без интернета и локальное тестирование</span>
+              </td>
+              <td class="col-prism">
+                <div class="cell-content positive">
+                  <svg class="cell-icon icon-yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>Поддерживает оффлайн-профили.</strong> Позволяет играть при отсутствии интернет-соединения, локально тестировать сервера и карты с любым ником.
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="cell-content negative">
+                  <svg class="cell-icon icon-no" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  <div>
+                    <strong>Блокируется без валидной сети.</strong> Если истек токен или серверы авторизации Microsoft недоступны, игра просто не запустится («Режим демо»).
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <!-- 9. Скорость интерфейса -->
+            <tr>
+              <td>
+                <span class="criterion-title">9. Скорость и лёгкость</span>
+                <span class="criterion-desc">Потребление оперативной памяти и время холодного старта</span>
+              </td>
+              <td class="col-prism">
+                <div class="cell-content positive">
+                  <svg class="cell-icon icon-yes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div>
+                    <strong>Написан на C++ и Qt6.</strong> Холодный старт за 0.5–1 секунду. Потребляет ~30-60 МБ ОЗУ. Может автоматически закрываться при старте Minecraft.
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="cell-content negative">
+                  <svg class="cell-icon icon-no" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                  <div>
+                    <strong>Тяжёлый веб-движок.</strong> Старт занимает 5-15 секунд из-за загрузки встроенного браузера, рекламы и синхронизации новостей. Потребляет 250-400+ МБ ОЗУ.
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Verdict Summary -->
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="section-tag">Итог сравнения</span>
+        <h2 class="section-title">Какой лаунчер выбрать вам?</h2>
+      </div>
+
+      <div class="verdict-grid">
+        <div class="verdict-card">
+          <h3>Minecraft Launcher</h3>
+          <p>Подойдёт только в случае, если вы играете исключительно в чистую ванильную версию Minecraft без модификаций и шейдеров.</p>
+          <div class="verdict-points">
+            <div class="verdict-point">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Сложно управлять сборками модов</span>
+            </div>
+            <div class="verdict-point">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f43f5e" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              <span>Медленный запуск и тяжелый интерфейс</span>
+            </div>
+            <div class="verdict-point">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Официальная поддержка от Mojang</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="verdict-card prism">
+          <h3>
+            <span class="gradient-text">Prism Launcher</span>
+            <span class="badge badge-prism">Безоговорочный выбор</span>
+          </h3>
+          <p>Лучший инструмент для любого игрока: от новичка с парой оптимизирующих модов вроде Sodium/Iris до создателя тяжелых сборок на 400+ модов.</p>
+          <div class="verdict-points">
+            <div class="verdict-point">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Установка модов и модпаков в пару кликов</span>
+            </div>
+            <div class="verdict-point">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Абсолютная изоляция папок и идеальный порядок</span>
+            </div>
+            <div class="verdict-point">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Мгновенный отклик и чистый открытый код</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action buttons -->
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a href="features.html" class="btn btn-secondary btn-lg" style="margin-right: 1rem;">
+          Исследовать все функции подробнее
+        </a>
+        <a href="download.html" class="btn btn-primary btn-lg">
+          Скачать Prism Launcher
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
+              <polygon points="20,4 36,32 4,32" stroke="#a78bfa" stroke-width="3.5" fill="rgba(139, 92, 246, 0.2)"/>
+              <circle cx="20" cy="22" r="4.5" fill="#06b6d4" />
+            </svg>
+            <span>Prism Launcher Guide</span>
+          </div>
+          <p class="footer-desc">
+            Информационный ресурс о преимуществах лучшего открытого лаунчера для Minecraft.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Навигация</h5>
+          <div class="footer-links">
+            <a href="index.html">Главная</a>
+            <a href="comparison.html">Сравнение</a>
+            <a href="features.html">Возможности</a>
+            <a href="download.html">Скачать</a>
+            <a href="about.html">О проекте</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Ресурсы Prism</h5>
+          <div class="footer-links">
+            <a href="https://prismlauncher.org" target="_blank" rel="noopener">Официальный сайт</a>
+            <a href="https://github.com/PrismLauncher/PrismLauncher" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://prismlauncher.org/wiki/" target="_blank" rel="noopener">Wiki / Справка</a>
+            <a href="https://discord.gg/prismlauncher" target="_blank" rel="noopener">Discord</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Лицензия</h5>
+          <div class="footer-links">
+            <a href="https://github.com/PrismLauncher/PrismLauncher/blob/develop/COPYING.md" target="_blank" rel="noopener">GPL v3.0</a>
+            <a href="about.html">Дисклеймер</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Prism Launcher Info & Comparison. Все права на Minecraft принадлежат Mojang Studios / Microsoft.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
